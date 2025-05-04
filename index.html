@@ -1,0 +1,1078 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/img/justice.png" />
+    <link rel="stylesheet" href="./style.css"></link>
+    <link rel="stylesheet" href="./article_style.css"></link>
+    <link rel="stylesheet" href="./sidebarsub.css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Unfair WUT</title>
+</head>
+
+<body>
+  <div id="popupLayer" class="popupLayer invisible"></div>
+    <div class="mainbody">
+        <div class="main1"></div>
+        <div class="topSide">
+          <div class="logo">
+            <img src="./assets/img/justice.png">
+          </div>
+        </div>
+        <div id="barPoint" class="main3">
+            <div onclick="openUpBar();" id="hamburgerDetails" class="openToggle">
+                <div class="stick1"></div>
+                <div class="stick2"></div>
+                <div class="stick3"></div>
+            </div>
+            <div class="sidebarContent">
+              <section class="sidebar-section cases">
+                <h2>Cases</h2>
+                <div class="case-list">
+                  <button onclick="openUpBar();" class="button-89" role="button">Mansur's Case</button>
+                </div>
+                <button onclick="showSubmissionPanel()" class="button-85" role="button">Add Your Case</button>
+              </section>
+              <div id="nav-bar">
+                <input id="nav-toggle" type="checkbox" />
+                <div id="nav-header"><a id="nav-title" href="" target="_blank"><i class="fab fa-codepen"></i>Sources</a><label id="NavToggleSwitch" for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+                    <hr />
+                </div>
+                <div id="nav-content">
+                    <div onclick="Redirect(1)" class="nav-button">
+                      <img width="35" alt="Emblem of Uzbekistan" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/256px-Emblem_of_Uzbekistan.svg.png?20240825143734">
+                      <span> Higher Education Ministry of Uzbekistan</span>
+                    </div>
+                    <div onclick="Redirect(2)" class="nav-button">
+                        <img width="35" style="border-radius: 25px;" src="https://yt3.googleusercontent.com/N3o-T2T9LuUNPeiXDAk_YHLK2Wc6Qi4Hvr-Qes0C9bQxhH3o7A7fT45fAH1N2niKreUQhFTu_dg=s900-c-k-c0x00ffffff-no-rj" />
+                        <span> HLC - Higher Learning Commission</span>
+                    </div>
+                    <div onclick="Redirect(3)" class="nav-button">
+                      <img width="35" style="border-radius: 25px;" src="https://www.loginradius.com/wp-content/uploads/2019/10/PNG_GDPR-e1672263252689.png" />
+                      <span> GDPR - General Data Protection of EU</span>
+                    </div>
+                    <hr />
+                    <div id="nav-content-highlight"></div>
+                </div><input id="nav-footer-toggle" type="checkbox" />
+                <div id="nav-footer">
+                    <div id="nav-footer-heading">
+                        <div id="nav-footer-avatar"><img src="./assets/img/davlatov.jpg" /></div>
+                        <div id="nav-footer-titlebox">Mansur<span id="nav-footer-subtitle">Admin</span></div><label for="nav-footer-toggle">
+              <div style="width: 35px; height: 35px; background-color: rgba(255, 255, 255, 0.897); border-radius: 50%; justify-content: center; align-items: center; display: flex;">     
+                <svg style="width:25px; height:25px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                  <path fill="rgba(27, 27, 27, 0.897)" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+                </svg>
+              </div>
+                  </label>
+                    </div>
+                    <div id="nav-footer-content">
+                      <div class="flex justify-center">
+                        Request for information update.
+                      </div>
+                      <br>
+                      <div class="flex justify-center">
+                        <a href="https://t.me/We_Humans_Face_Apocalypse" target="_blank">
+                          <button class="w-[200px] py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                            Contact
+                          </button>
+                        </a>
+                      </div>
+                      
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="mainContent">      
+          <div id="languageBar"></div>
+          <div class="article"></div>
+          <div id="languageNote"></div>    
+          <div class="disclaimer-box">
+            <strong>Disclaimer:</strong>
+            <p>
+              The information contained in this publication reflects the knowledge and understanding available to Mansur Davlatov at the time of writing. It is based on documented communications, procedural records, and firsthand experience.
+              <br><br>
+              This content may be subject to revision should clear and verifiable evidence be presented by Webster University that directly contradicts the claims or interpretations provided herein. Any future modifications will be made solely on the basis of factual clarification or substantiated documentation.
+            </p>
+          </div>    
+        </div>
+    </div>
+</body>
+<script>
+    let openedState = false;
+    let current_language = 1;
+    const subMenuOpened = (data)=>data.classList.contains('subOpen');
+    const handleSubMenu = (data, open=true)=>{if (open){data.classList.add('subOpen')}else{data.classList.remove('subOpen')}};
+    const openUpBar = ()=>{
+        const point = document.getElementById('barPoint');
+        const point2 = document.getElementsByClassName('sidebarContent')[0];
+        const subMenu = document.getElementById('NavToggleSwitch');
+        const subOpened = subMenuOpened(subMenu);
+        if(!subOpened){handleSubMenu(subMenu, false), subMenu.click()};
+        if(!openedState){
+            point.classList.remove('closeDown');
+            point.classList.add('opened');
+            closeStateButton(true)
+            setTimeout(() => {
+              point2.classList.add('showUpSidebar');
+            }, 599);
+            openedState = true;
+            if(!subOpened){
+              setTimeout(() => {
+                subMenu.click()
+                subMenu.classList.add('subOpen');
+              }, 2499);
+            }
+            return true;
+        };
+        point.classList.add('closeDown');
+        point2.classList.remove('showUpSidebar');
+        closeStateButton(false)
+        openedState = !openedState;
+    }
+    function closeStateButton(closeState=false){
+      const point = document.getElementById('hamburgerDetails');
+      const generateSticks = (amount)=>{let sticks = ''; for (let i = 1; i <= amount; i++){sticks+=`<div class="stick${i}"></div>`} return sticks;}
+      const sticks = generateSticks(closeState ? 2 : 3);
+      const classname = closeState ? 'closeToggle' : 'openToggle';
+      const classname_removal = closeState ? 'openToggle' : 'closeToggle';
+      console.log(classname)
+      console.log(classname_removal)
+      if(point){point.classList.remove(classname_removal); point.classList.add(classname); point.innerHTML = sticks;}
+    };
+    function loadImageReviewers(){
+      const jqueryScript = document.createElement('script');
+      jqueryScript.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+      jqueryScript.onload = () => {
+        const lightboxCSS = document.createElement('link');
+        lightboxCSS.rel = 'stylesheet';
+        lightboxCSS.href = 'https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css';
+        document.head.appendChild(lightboxCSS);
+        const lightboxScript = document.createElement('script');
+        lightboxScript.src = 'https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js';
+        document.body.appendChild(lightboxScript);
+      };
+      document.head.appendChild(jqueryScript);
+    };
+    loadImageReviewers();
+</script>
+<script>
+  let closeTimeout = null;
+  const language_index = {
+    1: 'english',
+    2: 'uzbek',
+    3: 'russian',
+  };
+  function Redirect(index) {
+    const indecies = {
+      1: 'https://gov.uz/en/edu',
+      2: 'https://www.hlcommission.org/',
+      3: 'https://gdpr-info.eu/',
+    };
+    window.open(indecies[index], '_blank');
+  }
+  function tranlationNote(show=true){
+    const structure = `
+          <div class="translation-notice">
+            <p class="notice-text">Uzbek and Russian translation will be published shortly</p>
+          </div>      
+    `;
+    const noteLayer = document.getElementById('languageNote');
+    noteLayer.innerHTML = show ? structure : '';
+    if(show){
+      const articleContainer = document.querySelector(".article");
+      articleContainer.innerHTML = '';
+    };
+  };
+  const data = {
+    title: "Unfair Webster University in Tashkent",
+    author: "Mansur Davlatov.",
+    thumbnail: "https://news.webster.edu/images/webster_tashkent_wide.jpg",
+    date: 'May 30, 2025.',
+    mainContent: {
+      english: [
+        { header:'Overview',
+          text: `
+In early 2025, 
+Mr. Mansur Davlatov, a senior student at Webster University’s Tashkent campus, was dismissed from the university under circumstances that raise serious legal and ethical concerns. The case, as presented on this website, outlines a pattern of administrative misconduct, due process violations, and breach of academic contract — all of which were executed without transparency or accountability.
+
+
+
+`
+        },
+        {text: `
+          This public record has been created to shed light on what took place behind closed doors, how institutional safeguards were bypassed, and why this matter demands further review by both national and international regulatory bodies.
+          `,
+        space:2,
+        },
+        {text: ' ', space:2},
+        { 
+          header: [2, 'Background and Student Profile'],
+          text: `
+Mr. Davlatov was a senior-level student with a clean academic record and no prior disciplinary issues. 
+At the time of the incident, he was on track to graduate in July 2025. His dismissal came after a single alleged violation of academic conduct, 
+for which he was never granted a proper formal hearing, nor provided with written charges, appeal instructions, or a clear disciplinary timeline.
+          `,},
+        {
+          header:[2, 'Key Issues and Violations Identified'], 
+          listData:[
+            'Suspension Without Notice, Explanation, or Procedural Transparency',
+            'Dismissal was issued based on a Code of Conduct not referenced in the student’s signed contract.',
+            'No proper formal hearing was conducted, and no advance notice was provided.',
+            "The official dismissal letter contained no appeal instructions, in direct violation of the university's own policies.",
+            "Communication was almost completely obstructed for nearly two months deliberately, during which Mr. Davlatov’s university email was disabled and no alternative contact was provided.",
+            "The dismissal document was not delivered until Mr. Davlatov physically appeared on campus, two weeks after it had been finalized.",
+            "Citation of a “GDPR document” as grounds for dismissal, which has never been provided or verified, raising questions of procedural fabrication.",
+          ],
+        },
+        {text: ' ', space:1},
+        { header: [2, 'Suspension With no Notice'], text: `
+          On January 31, Mr. Mansur Davlatov discovered that his access to the university's online student system had been suspended without any prior warning or notification, 
+          the issue occurred around 3:00 PM local time, with no email, message, or official communication from the university indicating a reason or context.
+The following day, Mr. Davlatov attended a scheduled meeting with the GCP (Global Citizenship Program) Lead, where he openly discussed a situation involving an alleged academic misconduct. Following that, acting on his own initiative, he voluntarily approached the Senior Site Registrar and Supervisor, Mr. Ruban, in his office to further clarify and understand the situation.
+
+
+
+        ` },
+        { 
+          text: `
+            The discussion with Mr. Ruban was calm, professional, and respectful. 
+            However, during their exchange, Dr. Anthony Jarvis, Rector of Webster University Tashkent, entered the office, and Mr. 
+            Ruban briefed him on the matter. What followed was an unexpectedly aggressive, stressful and disrespectful conversation, during which Mr. 
+            Davlatov was first told that he had been placed under suspension.
+          `
+        },
+        {
+          header: [1, 'At no point prior to or after this confrontation was Mr. Davlatov provided with:'],
+          listData: [
+            'Any formal notice of suspension,',
+            'A written explanation of the allegations against him,',
+            'A reference to what code or policy he was being charged under,',
+            'Or any instructions regarding his right to respond, appeal, or defend himself.',
+          ]
+        },
+        {text: ' ', space:1},
+        {
+          header: [2, 'Breach of Contract: Dismissal Based on Unreferenced Code of Conduct'],
+          text: `
+Mr. Mansur Davlatov’s dismissal from Webster University Tashkent was executed based on a Student Code of Conduct that was not explicitly referenced in the enrollment contract he signed upon joining the university.
+          `
+        },
+        {image: './assets/img/agreement.png'},
+        {
+          text : `
+          As shown in the contract excerpt above, the agreement explicitly states that Webster University USA policies and standards hosted at webster.edu.
+          There is no direct or explicit mention of a separate Student Code of Conduct for Webster University Tashkent, nor any documentation linking students to localized disciplinary procedures available on webster.uz.
+        `},
+        {
+          header: [1, 'This omission raises serious contractual and procedural issues, including:'],
+          listData: [
+            'A lack of clear binding authority for the specific policy used in the dismissal',
+            'A potential misrepresentation of governing rules and standards at the time of enrollment;',
+            'A procedural breakdown, as the disciplinary actions taken did not follow the due process outlined in the referenced U.S. policies.'
+          ],
+          text: `
+          `,
+        },
+        {text: ' ', space: 1},
+        {
+          header: [2, 'No Formal Hearing, No Proper Notification'],
+          text: `
+            Nearly a month of complete silence from the administration followed the alleged incident, raising serious concerns about due process and transparency, Mr. Mansur Davlatov was only partially informed of a meeting that would later be used as justification for his dismissal. 
+            On February 26th, while on campus for a meeting with the Student Affairs Coordinator—arranged at his own initiative—Mr. 
+            Davlatov voluntarily spoke with the Senior Site Registrar, Mr. Ruban, who stated, “We actually wanted to meet with you — come on Friday at 3PM.”
+          `
+        },
+        {image: './assets/img/sms.png',},
+        {
+
+          text: `
+            No official communication was sent before this exchange. Then, on the day of the meeting, Mr. Davlatov received a vague SMS notification just two hours prior, with no formal email, agenda, or clear identification of participants or purpose
+            and it was sent through the personal phone number of Senior Site Registrar & Supervisor.
+          `,
+        },
+        {
+          header: [1, 'This failure to provide:'],
+          listData: [
+            'Formal notice of a disciplinary hearing',
+            'A list of individuals who would be present',
+            'An opportunity to prepare a defense,',
+            'Or even a clear explanation of what process was underway,',
+          ],
+        },
+        {text: ' ', space: 1},
+        {header: [
+          1, 
+          `
+  Raises serious concerns regarding transparency and procedural fairness, appearing to be a deliberate effort to prevent the student from preparing an adequate defense. At no point was the meeting described or framed as a formal hearing, and it was repeatedly referred to simply as a “meeting.” 
+  The nature of this meeting further demonstrated its one-sided character — it primarily consisted of the university asking Mr. Davlatov questions to gather more information, rather than providing a platform for him to present his case or defend himself.
+  No agenda, participant list, or procedural guidelines were shared in advance, and no outcome documentation or recording has ever been provided.
+
+  If Mansur Davlatov had not independently reached out to the Senior Site Registrar on February 26, he would not have been informed about the disciplinary meeting at all. 
+  The informal SMS notification was only sent on February 28, which clearly indicates that the meeting would not have been communicated to him otherwise. 
+  This delay constitutes a deliberate obstruction of communication.
+
+  Furthermore, both the Webster University Tashkent Student Code of Conduct and the Webster University USA policies explicitly state that students must be given at least three business days to prepare for a disciplinary hearing, to ensure a fair and equitable process. 
+  The failure to meet this requirement appears to be highly likely intentional, constituting a clear breach of institutional policy and representing serious procedural mistreatment. 
+  This further undermines the integrity and fairness of the disciplinary process.
+          `,
+        ]},
+        {
+          text: `
+            To this day, the University has not provided Mr. Davlatov with any official documentation or transcript of the alleged hearing, nor was he ever informed in writing that this meeting would serve as a formal disciplinary proceeding.
+          `
+        },
+
+        {
+          header: 'The official dismissal letter contained no appeal instructions',
+          text: `
+
+          `
+        },
+
+        {
+          header: [2, 'The official dismissal letter contained no appeal instructions'],
+          text: `
+            The official dismissal letter issued by Webster University Tashkent contained no instructions regarding the right to appeal.
+          `,
+        },
+        {
+          image: ['./assets/img/dismissalDoc.jpg'],
+        },
+        {
+          text: `
+            According to standard academic protocols and due process norms—particularly those referenced in Webster University’s official U.S. policies—students must be provided with clear information on how to challenge or appeal disciplinary decisions. 
+            The omission of such instructions constitutes a serious procedural failure. Given that appeal instructions are typically standard in dismissal letters, 
+            their absence in this case suggests either gross procedural oversight or a deliberate effort to obstruct the student’s right to contest the decision — the latter being more likely, considering the broader context of the case.
+          `,
+        },
+        {
+          text: `
+            At the bottom of the letter, there appears a GDPR disclaimer—a generic legal note usually appended to email footers. 
+            Its presence in an official disciplinary letter is highly irregular and raises concerns about the authenticity of the document. 
+            This inclusion may reflect an attempt to retroactively frame the dismissal in the context of European data protection laws, 
+            despite the university never substantiating the alleged GDPR violation or following proper investigative procedures.
+          `,
+        },
+        {
+          text: `
+            This unusual insertion will be examined further in the following section, 
+            where the possibility of either document fabrication or post-hoc procedural justification will be addressed in greater detail.
+          `,
+        },
+        {
+          header: [2, 'Obstructed Communication and Deliberate Isolation'],
+          text: `
+
+Following the issuance of an interim suspension, Mansur Davlatov was immediately disconnected from all university-related platforms, including his Canvas account and Webster University email. 
+This action was taken under the pretext of interim measures, as outlined in the Webster University Tashkent Student Code of Conduct.
+However, despite this suspension being interim in nature, the university failed to provide any alternative channels for communication, in direct contradiction to the Code of Conduct, which clearly states that “alternative forms of communication must be provided.” 
+As a result, Mr. Davlatov was forced to physically visit the university on five separate occasions over a four- to five-week period. On two of those visits, he was denied entry by campus security due to his suspension status. 
+On the remaining three occasions, he was allowed entry. These repeated visits were made necessary only because the university ignored its obligation to maintain communication and repeatedly failed to respond to Mr. Davlatov’s emails—almost all of which were intentionally left unanswered.
+
+
+No response was ever issued, and no alternative method for engagement or correspondence was offered. 
+The university’s failure to facilitate communication during a critical disciplinary period represents a clear breach of procedural fairness and strongly suggests intentional obstruction.
+
+
+
+
+          `,
+        },
+        {
+          text: `
+            While Mr. Mansur Davlatov was actively pursuing legal action against Webster University Tashkent, his legal counsel requested contact with the university’s legal representative to clarify several procedural and legal concerns related to his dismissal. 
+            Following this, Mr. Davlatov visited the university in person and made a formal request through the front desk receptionist. 
+            As the legal representative was unavailable at that time, the receptionist took down Mr. Davlatov’s name and phone number, assuring him that his request would be forwarded and he would be contacted shortly.
+            In the following days, having received no response, Mr. Davlatov personally followed up with the receptionist by phone. 
+            She confirmed that both Dr. Anthony Jarvis and the university's legal representative had been informed of the request. 
+            Nevertheless, no contact was initiated by the university.
+            `,
+        },
+        {
+          text: `
+      In addition, between April 13th and 18th, Mr. Davlatov made two further attempts to schedule a meeting with Dr. Jarvis via the Webster Tashkent call center.
+      These efforts were also ignored. 
+      The complete lack of acknowledgment over a sustained period — especially while legal action was being pursued — raises serious questions about the institution’s willingness to engage in good faith and its compliance with the principles of transparency, due process, and procedural fairness.
+
+       `,
+        },
+        {
+          text : 'Below are screenshots of multiple unresponded emails sent to Webster Tashkent administration:'
+        },
+        {image: './assets/img/february13-Mr-Ruban.png'},
+        {text:'Senior Site Registrar & Supervisor'},
+        {image: './assets/img/february13-studentAffairs.png'},
+        {text:'Student Affairs Office'},
+        {image: './assets/img/march-30-noResponse.png'},
+        {text:'Dr. Anthony Jarvis'},
+        {image: './assets/img/april-2-AnthonyJarvis.png'},
+        {text:'Dr. Anthony Jarvis'},
+        {image: './assets/img/April2-no-Response.png'},
+        {text:'Senior Site Registrar & Supervisor'},
+        {text:' ', space: 2},
+        {text:' This was the first formal response to Mr. Davlatov’s inquiries in over seven weeks, all of which he had submitted through his personal email account'},
+        {image: './assets/img/First in 2-months.png'},
+        {text: 'The response came from the Senior Site Registrar & the Supervisor, stating:'},
+        {text: '“It appears you are on academic break. If you wish to resume your studies, please let us know.”'},
+        {text: ' ', space:1},
+        {
+          header: [2, 'Dismissal Document Not Communicated Until Physical Visit'],
+        },
+        {
+          text: `
+      Mr. Davlatov, acting in good faith and believing that no formal decision had been made — based on the Senior Site Registrar’s statement, “It appears you are on academic break. 
+      If you wish to resume your education, please let us know” — immediately followed up with the university the next day, on March 28. 
+      It was only at this point, during his physical visit, that he was handed the dismissal document.
+
+          `
+        },
+        {
+          text: `
+The delivery of the dismissal document came as a severe emotional blow to Mr. Davlatov. He was shocked to discover that the letter had been finalized, signed, and stamped on March 14 — nearly two weeks before it was actually provided to him. During that time, he had been left under the false impression that his case was still under review. This discrepancy not only deepened his distress but also pointed to a serious breakdown in transparent communication.
+
+Just one day before receiving the dismissal letter, the Senior Site Registrar had informed Mr. Davlatov that he was merely on academic break and could return to his studies if he wished. Trusting that information, Mr. Davlatov visited the university in person the next day — only to be handed a dismissal letter that had been issued two weeks prior.
+
+This abrupt reversal and the apparent withholding of critical information left Mr. Davlatov feeling misled and emotionally manipulated. He described the experience as being treated not as a student entitled to fairness and dignity, but as a passive figure in a predetermined process — “played like a doll” by an administration that had already made its decision in secret.
+
+
+          `
+        },
+
+        {
+          text: `
+            During the initial weeks of his suspension, Mr. Davlatov made multiple good-faith efforts to speak directly with Interim Rector Dr. Anthony Jarvis to seek clarity and ensure fair communication. However, when he requested a meeting through the Student Affairs Coordinator, he was told over the phone that the Rector was “sick” and unavailable. 
+            In a subsequent attempt, when Mr. Davlatov requested a joint meeting with the Senior Site Registrar, he was again denied, this time being told that the Rector was “too busy” and that even the Senior Site Registrar himself was waiting for the Rector’s availability. 
+            These repeated deferrals created a sense of intentional inaccessibility at the highest administrative level, leaving Mr. Davlatov with no clear path for recourse or resolution.
+          `,
+        },
+        {
+          text: `
+When viewed alongside the university’s persistent failure to reply to Mr. Davlatov’s written inquiries — despite multiple emails sent over several weeks — these actions suggest more than just administrative delays. 
+They point to a deliberate pattern of obstruction, potentially reflecting an internal directive or informal decision not to engage with Mr. Davlatov’s correspondence during a critical period. 
+Mr. Davlatov genuinely believes this was intentional and served to isolate him from any opportunity to advocate for himself.
+          `,
+        },
+
+        {
+          header: [2, 'Citation of Likely False or Non-Existent “GDPR Document” as Grounds for Dismissal'],
+          text: `
+            On April 2, 2025, Mr. Mansur Davlatov contacted the Senior Site Registrar and Supervisor by phone after repeated emails were ignored. 
+            He requested clarification about his dismissal and expressed his desire to appeal the decision, especially since the official dismissal document contained no information regarding the right to appeal or the procedure to do so.
+          `,
+        },
+        {
+          text: `
+    During this call, the Registrar informed Mr. Davlatov that his concerns had been forwarded to Dr. Anthony Jarvis. 
+    The Registrar then stated, “We received a document from GDPR, according to which, you should be dismissed.” 
+    When Mr. Davlatov directly asked what the document specifically stated, the Registrar replied, “I do not know. I’m just telling you what we received.”
+
+    This vague and unverified citation of a “GDPR document” raises serious concerns about the legitimacy of the dismissal process. 
+    There was no attempt to formally provide or describe the document, no written copy was shared, and the nature of the alleged “GDPR team” involved remains unknown to this day. 
+    These facts, combined with the suspicious insertion of a GDPR legal note on the official dismissal letter, suggest the possible use of fabricated or procedurally invalid documentation to justify a predetermined decision.
+
+          `,
+        },
+        {
+          text: `
+This suspicious reference will become even more critical in light of the subsequent communication between Mr. Davlatov and Webster Tashkent, as detailed in the following section — suggesting that the GDPR citation may have been a retroactive or fabricated justification, rather than a legitimate legal directive.
+
+          `,
+        },
+        {
+          text: `GDPR (General Data Protection Regulation) is a European privacy law framework that has no authority to recommend or enforce disciplinary sanctions at educational institutions. `
+        },
+        {
+          header: [2, 'Recent Communication'],
+          text: `
+            Mr. Davlatov, committed to pursuing an appropriate resolution, began escalating the issue through Webster University’s internal structures after experiencing what he perceived as unacceptable mistreatment and a disregard for his student rights. 
+            As part of this effort, he reached out to the university’s headquarters in St. Louis, seeking accountability and intervention at the institutional level.
+          `
+        },
+        {
+          text: `
+          As evidenced by a chain of unanswered emails, Webster University only responded to Mr. Davlatov’s appeal-related inquiry on April 22 — approximately 23 days after he had initially reached out on March 30. 
+          This response came only after the situation had begun to escalate internally, further reinforcing the pattern of delayed and obstructive communication.
+          `,
+        },
+        {
+          header: [1, 'Response from Webster Tashkent was as follows:'],
+          text: `Dear Mansur Davlatov,`,
+        },
+        {
+          text: `Thank you for your inquiry.`,
+        },
+        {
+          text: `As indicated in the dismissal notification sent to your university email, you were granted three days to appeal the decision. Unfortunately, you did not submit an appeal within the specified timeframe.`
+        },
+        {
+          header: [1, 'For your reference, the grounds for appeal as outlined on page 9 of the SCC are:'],
+          listData: [
+            'A procedural error occurred that negatively impacted the student.',
+            'New evidence has emerged that could not have been considered during the original process.',
+            'The sanction imposed is inappropriate or excessively severe.',
+          ],
+          space: 1,
+        },
+        {
+          text: `Let us address each in turn:`,
+        },
+        {
+          header: [1, '1. Due Process'],
+          text: `
+            The student conduct process was followed rigorously. You were interviewed on four separate occasions — by the Registrar, the GCP Program Lead, myself, and representatives from the Global GDPR team. 
+            At each stage, you were given full opportunity to explain your actions. 
+            Unfortunately, your explanation regarding the unauthorized access to computer systems and the theft of your professor’s login credentials was not found credible. 
+            As was made clear to you, 
+            there were legal and ethical pathways to pursue your stated goal — understanding Canvas in order to develop a software application — but you chose to act outside those bounds.
+          `,
+        },
+        {
+          header: [1, '2. New Evidence'],
+          text: `
+            You have not submitted any new evidence that would warrant a reconsideration of the decision.         
+          `,
+        },
+        {
+          header: [1, '3. Appropriateness of Sanction'],
+          text: `
+            The sanction of dismissal is justified by the gravity of the offense. 
+            All students at Webster University are entrusted to use university systems responsibly and ethically. 
+            By stealing login credentials, accessing a professor’s data, and exposing confidential information belonging to fellow students, you violated that trust in a serious and unacceptable manner. 
+            Your actions represent a clear breach of the Student Code of Conduct and demonstrate a fundamental failure to uphold the standards required for continued access to our academic and technological environment.
+          `,
+        },
+        {text: 'For these reasons, the decision to dismiss you remains in effect.'},
+        {text: `
+          Sincerely,
+          `},
+        {text: `
+           Dr. Anthony Jarvis
+          `},
+        {text: `
+           Interim Rector
+          `},
+        {text: 'Webster University Tashkent'},
+        {text: ' ', space: 1},
+        {
+          header: [1, 'Rebuttal to Webster University Tashkent’s Official Dismissal Response by Davlatov'],
+          text: `
+            Webster University Tashkent asserts that a dismissal notification was sent to Mr. Mansur Davlatov’s university email and that he failed to appeal within the three-business-day timeframe outlined in the Student Code of Conduct (SCC). 
+            However, the university was aware that Mr. Davlatov no longer had access to his university email — a fact evident from multiple ignored communications and the broader context of events. 
+            This raises the concern that either no email was sent, or it was intentionally sent to an inaccessible address to deprive Mr. Davlatov of the opportunity to appeal, in direct contradiction to the SCC’s stipulated procedures.
+          `,
+        },
+        {
+          text: `
+            In its response, the university outlines the three possible grounds for appeal but fails to acknowledge how its own procedural failures — including the lack of formal notice, absence of a proper hearing, and repeated rejections of communication — did in fact negatively impact Mr. Davlatov’s ability to participate in a fair process.
+          `,
+        },
+        {
+          header: [1, 'Claim that conduct process was “rigorously followed” is contradicted directly by the reality that:'],
+          listData: [
+            'Administration deliberately failed to notify Mr. Davlatov of a meeting scheduled on February 28th',
+            'No notice of charges or hearing format was ever provided.',
+            'All follow-up requests, including appeals, were deliberately ignored.',
+            'Administration likely deliberately failed to provide Mr. Davlatov with alternative forms of communication',
+          ],
+          
+        },
+        {text: ' ', space: 1},
+        {
+          text: `
+            Moreover, Webster University Tashkent failed to notify Mr. Davlatov about the existence, scope, or structure of any internal investigation allegedly conducted against him. 
+            At no point was he provided with a formal explanation of the procedures undertaken, the evidence reviewed, or the timeline of the investigative process. 
+            This total absence of procedural transparency deprived Mr. Davlatov of the opportunity to respond meaningfully, seek guidance, or prepare a proper defense.
+            This was not, and is not, merely a failure to follow proper student conduct procedures — it represents a complete disregard for them.
+          `,
+        },
+        {text: ' ', space: 1},
+        {
+          text: `
+            The accusation of “stealing login credentials” is misleading. 
+            Mr. Davlatov has consistently maintained that he accessed a professor’s Canvas profile only once, with the sole purpose of testing a software application he had independently developed during the Fall 2024 semester as part of his coursework in System Analysis and Design. 
+            The initial version of the application was built exclusively for student use, but Mr. Davlatov sought to expand its capabilities by adding functionalities tailored to professor accounts as part of a broader development initiative.
+
+          `,
+        },
+        {
+          text: `
+          To achieve this, he generated an access token — a step he acknowledges was ethically and procedurally improper. 
+          Mr. Davlatov openly admits that this act was morally questionable and did not comply with institutional protocols. 
+          However, he underscores that there was no harmful intent, no confidential data was extracted or distributed, and the access was limited, purposeful, and solely related to technical testing.
+          `,
+        },
+        {
+          text: `
+            His plan was to finalize the software prototype and then disclose both the tool and the manner of access to the professor involved after a few weeks. 
+            Webster University failed to see that — even though Professor Subair Ali, who taught the System Analysis and Design course, can confirm that this was indeed the project Mr. Davlatov had developed during the semester.
+          `,
+        },
+        {
+          header: [1, `
+            Mr. Davlatov categorically rejects the allegation made by Dr. Anthony Jarvis concerning the alleged exposure of confidential information belonging to fellow students. 
+            He considers this claim to be a false accusation with no factual basis. 
+            Mr. Davlatov formally demands that Dr. Jarvis and Webster University provide concrete evidence supporting this serious allegation. 
+            In the absence of such evidence, he views the accusation as defamatory and a violation of his right to a fair and transparent process.
+          `],
+        },
+        {
+          text: `
+              Contrary to the account presented by Dr. Anthony Jarvis regarding the student conduct process, only two of the four meetings cited — those with the GCP Program Lead and the group referred to as the “Global GDPR team” — were initiated by the university. The remaining meetings were arranged by Mr. Mansur Davlatov himself. 
+              These were not part of a structured disciplinary process but were conducted at Mr. Davlatov’s own request as he sought clarity on his academic status amid institutional silence. 
+              The initiative to engage in these discussions came entirely from Mr. Davlatov, not from any formal procedure undertaken by the university.
+          `,
+        },
+
+        {
+          text: `
+            In relation to the so-called Global GDPR team, Mr. Davlatov submitted a formal inquiry to Webster University Tashkent, requesting the names and official roles of the three individuals — described as three women — who were presented as representatives of this entity. 
+            As of the time of this publication, the university has failed to provide any such information. 
+            This lack of transparency has cast serious doubt on the legitimacy of the team’s existence and their purported involvement in the disciplinary process.
+
+            Concerns about procedural integrity are further deepened by the statement made by the Senior Site Registrar, who referenced a “document received from the GDPR team” as part of the justification for Mr. Davlatov’s dismissal. 
+            When asked to elaborate, the Registrar was unable to explain the document’s content or its legal basis. 
+            Additionally, the inclusion of an unusual and unexplained GDPR-related legal clause within the internal disciplinary record accompanying Mr. Davlatov’s official dismissal letter has raised further suspicions. 
+            These elements collectively point not merely to administrative oversight, but to a possible fabrication of due process within Webster University Tashkent’s handling of the case.
+          `,
+        },
+        {
+          text: `
+            Taken together — the university’s failure to identify the so-called GDPR team members, the Registrar’s inability to verify the GDPR-related documentation, and the unexplained and legally questionable reference to GDPR within the official dismissal record — all point to the fabrication or misuse of procedural elements within Webster University in Tashkent.
+          `,
+        },
+        {
+          header: [
+            2, 
+            `
+              Regulatory Bodies
+            `,
+          ]
+        },
+        {
+          header: [
+            1, 
+            `
+              Mr. Davlatov can provide personal communications with university staff, along with other supporting documents, to demonstrate the lack of transparency and responsiveness in his case.
+              These materials, including a screenshot and an official document, will be made available for comparison and further validation, if requested by relevant regulatory bodies. 
+              This will ensure the integrity of the evidence and help substantiate the claims. 
+              These documents will be shared only for official purposes and to ensure the credibility of the investigation.
+            `,
+          ]
+        }
+      ],
+      
+      // uzbek: [
+      //   { header:'ass', text: "Webster Tashkent dismissed a student without due process..." },
+      //   { image: "/home/badassguy/Desktop/dismissalDoc.jpg" },
+      //   { text: "According to multiple sources, this decision..." },
+      //   { text: "The student plans to appeal..." }
+      // ],
+      // russian: [
+      //   { header:'ass', text: "Webster Tashkent dismissed a student without due process..." },
+      //   { image: "/home/badassguy/Desktop/dismissalDoc.jpg" },
+      //   { text: "According to multiple sources, this decision..." },
+      //   { text: "The student plans to appeal..." }
+      // ],
+    }
+  };
+  function createOrderedListElement(items) {
+    if (!Array.isArray(items) || items.length === 0) return null;
+
+    const ol = document.createElement('ol');
+    ol.className = 'list-decimal pl-6 space-y-2 text-gray-900 text-lg';
+
+    items.forEach(text => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      ol.appendChild(li);
+    });
+
+    return ol;
+  }
+
+  function renderArticle(language_id, data) {
+    const language = language_index[language_id];
+    const articleContainer = document.querySelector(".article");
+    articleContainer.innerHTML = '';
+  
+    const title = document.createElement('h1');
+    title.className = 'article-title';
+    title.textContent = data.title || 'Untitled';
+  
+    const byline = document.createElement('p');
+    byline.className = 'article-byline';
+    byline.textContent = data.author ? `Documented by ${data.author}` : '';
+    const dateTag = document.createElement('p');
+    dateTag.textContent = data.date ? `posted on ${data.date}` : '';
+    const body = document.createElement('div');
+    body.className = 'article-body';
+    if (data.thumbnail) {
+      const introImage = document.createElement('img');
+      introImage.className = 'article-image';
+      introImage.src = data.thumbnail;
+      introImage.alt = data.title;
+      body.appendChild(introImage);
+    }
+    const textContainer = document.createElement('div');
+    textContainer.className = 'article-text';
+    const content = data.mainContent[language];
+    content.forEach(item => {
+      if (Array.isArray(item.header)){
+        const headerSize = item.header[0] || 2;
+        const headerText = item.header[1]
+        const header = document.createElement('h1');
+        header.className = `text-${headerSize}xl font-bold tracking-tight text-gray-900 mb-4`;
+        header.textContent = headerText;
+        textContainer.appendChild(header);
+      }
+      if (item.listData){
+        const listContent = item.listData;
+        const listedContent = createOrderedListElement(listContent);
+        const spacing = document.createElement('br');
+        const spacing2 = document.createElement('br');
+        if (listedContent){textContainer.appendChild(listedContent);}
+        if(item.space){textContainer.append(spacing); if(item.space == 2){textContainer.append(spacing2)}};
+      }
+      if (item.text) {
+        const p = document.createElement('p');
+        const spacing = document.createElement('br');
+        const spacing2 = document.createElement('br');
+        p.textContent = item.text;
+        textContainer.appendChild(p);
+        if(item.space){textContainer.append(spacing); if(item.space == 2){textContainer.append(spacing2)}};
+      } else if (item.image) {
+  if (Array.isArray(item.image) && item.image.length === 2) {
+      const container = document.createElement('div');
+      container.className = 'flex flex-wrap gap-4 w-full mb-4';
+      item.image.forEach(src => {
+        const figure = document.createElement('figure');
+        figure.className = 'flex-1 article-figure';
+
+        const a = document.createElement('a');
+        a.href = src;
+        a.setAttribute('data-lightbox', 'article-gallery');
+        a.setAttribute('data-title', 'Zoomed image with caption');
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Side-by-side image";
+        img.className = 'w-full h-auto rounded shadow';
+
+        a.appendChild(img);
+        figure.appendChild(a);
+
+        const caption = document.createElement('figcaption');
+        caption.textContent = "Click to enlarge";
+        caption.className = 'text-sm text-gray-500 mt-2';
+        figure.appendChild(caption);
+
+        container.appendChild(figure);
+      });
+
+      textContainer.appendChild(container);
+    } else {
+      const figure = document.createElement('figure');
+      figure.className = 'article-figure';
+
+      const a = document.createElement('a');
+      a.href = item.image;
+      a.setAttribute('data-lightbox', 'article-gallery');
+      a.setAttribute('data-title', 'Zoomed image with caption');
+
+      const img = document.createElement('img');
+      img.src = item.image;
+      img.alt = "Demo image";
+      img.className = 'w-full h-auto rounded shadow';
+
+      a.appendChild(img);
+      figure.appendChild(a);
+
+      const caption = document.createElement('figcaption');
+      caption.textContent = "Click to enlarge";
+      caption.className = 'text-sm text-gray-500 mt-2';
+      figure.appendChild(caption);
+
+      textContainer.appendChild(figure);
+    }
+}
+    });
+    body.appendChild(textContainer);
+    articleContainer.appendChild(title);
+    articleContainer.appendChild(byline);
+    articleContainer.appendChild(dateTag);
+    articleContainer.appendChild(body);
+  }
+  const languageBar = (index_id=1)=>{
+    const point = document.getElementById('languageBar');
+    const structure = `
+          <div class="language">
+            <div onclick="changeLanguage(1);" class="languageOption ${index_id == 1 ? 'selectedLanguage' : ''}">
+              <div class="languageFlag">🇺🇸</div>
+              <div class="languageName">EN</div>
+            </div>
+            <div onclick="changeLanguage(2);" class="languageOption ${index_id == 2 ? 'selectedLanguage' : ''}">
+              <div class="languageFlag">🇺🇿</div>
+              <div class="languageName">UZ</div>
+            </div>
+            <div onclick="changeLanguage(3);" class="languageOption ${index_id == 3 ? 'selectedLanguage' : ''}">
+              <div class="languageFlag">🇷🇺</div>
+              <div class="languageName">RU</div>
+            </div>
+          </div>
+      `;
+    if(point){point.innerHTML = structure};
+    if (index_id == 1){
+      tranlationNote(false);
+      return renderArticle(index_id, data);
+    }
+    tranlationNote();
+  };
+  const changeLanguage = (language_id)=>{
+    if(!(language_id == current_language)){
+      languageBar(language_id);
+      current_language = language_id;
+    };
+  };
+  languageBar(current_language);
+  </script>
+  <script>
+    const setClickEvent = (callback, pointID)=>{
+      const point = document.getElementById(pointID);
+      if (point){point.addEventListener('click', callback)}
+    };
+    const getCookie = (callback)=>{
+      const layer = document.getElementById('popupLayer');
+      const structure = `
+          <div class="relative slowShow">
+            <div id="menu" class="w-full h-full bg-gray-900 bg-opacity-80 top-0 fixed sticky-0">
+              <div class="2xl:container  2xl:mx-auto py-5 px-4 md:px-28 flex justify-center items-center">
+                <div class="w-96 md:w-auto dark:bg-gray-800 relative flex flex-col justify-center items-center bg-white py-10 px-4 md:px-24 xl:py-24 xl:px-36">
+                  <div role="banner">
+                    <svg class="w-20 md:w-24 lg:w-28" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M107.595 62.8312C106.78 62.9508 105.947 63.0143 105.098 63.0143C97.2875 63.0143 90.6776 57.9049 88.4104 50.8481C88.0228 49.6419 87.0376 48.7131 85.7929 48.4759C72.8221 46.0065 63.0138 34.6192 63.0138 20.9296C63.0138 15.18 64.7493 9.83943 67.7182 5.39136C68.4241 4.33371 67.835 2.92496 66.5877 2.67799C63.163 1.99986 59.6236 1.64111 55.9996 1.64111C25.9779 1.64111 1.64062 25.9784 1.64062 56.0001C1.64062 86.0215 25.9779 110.359 55.9996 110.359C83.0565 110.359 105.429 90.6641 109.638 64.7894C109.829 63.6152 108.771 62.6584 107.595 62.8312Z" fill="#F5B97D" />
+                      <path d="M31.4506 45.4779C35.3239 45.4779 38.4638 42.338 38.4638 38.4648C38.4638 34.5915 35.3239 31.4517 31.4506 31.4517C27.5774 31.4517 24.4375 34.5915 24.4375 38.4648C24.4375 42.338 27.5774 45.4779 31.4506 45.4779Z" fill="#CD916E" />
+                      <path d="M34.9563 78.7958C37.8618 78.7958 40.2172 76.4404 40.2172 73.5349C40.2172 70.6293 37.8618 68.2739 34.9563 68.2739C32.0507 68.2739 29.6953 70.6293 29.6953 73.5349C29.6953 76.4404 32.0507 78.7958 34.9563 78.7958Z" fill="#CD916E" />
+                      <path d="M78.579 15.8539L78.0759 18.8725C77.6625 21.3533 79.0629 23.7799 81.4178 24.663L85.8717 26.3332C88.8137 27.4363 92.0604 25.7316 92.8223 22.6833L94.4098 16.333C95.3992 12.3752 91.7023 8.84606 87.7946 10.0183L82.256 11.68C80.3352 12.2566 78.9089 13.8753 78.579 15.8539Z" fill="#F5B97D" />
+                      <path d="M96.3305 34.9582L94.2128 36.0172C92.5518 36.8476 91.8262 38.8288 92.5577 40.5355L94.2616 44.5108C95.2932 46.9177 98.5029 47.3861 100.179 45.3744L102.92 42.0853C104.205 40.5431 103.936 38.239 102.33 37.0346L100.003 35.2894C98.9405 34.4923 97.5186 34.3641 96.3305 34.9582Z" fill="#F5B97D" />
+                      <path d="M106.85 27.9433C108.787 27.9433 110.357 26.3734 110.357 24.4367C110.357 22.5001 108.787 20.9302 106.85 20.9302C104.914 20.9302 103.344 22.5001 103.344 24.4367C103.344 26.3734 104.914 27.9433 106.85 27.9433Z" fill="#F5B97D" />
+                      <path d="M62.5752 103.784C32.5535 103.784 8.21625 79.4465 8.21625 49.4248C8.21625 36.088 13.0268 23.8802 20.9974 14.4224C9.16475 24.3939 1.64062 39.3155 1.64062 56.0004C1.64062 86.0219 25.9779 110.359 55.9996 110.359C72.695 110.359 87.6 102.854 97.5614 91.0317C88.1138 98.9885 75.9167 103.784 62.5752 103.784Z" fill="#E3AA75" />
+                      <path d="M86.6518 22.2637C83.7105 21.1608 81.9611 18.13 82.4776 15.0312L83.0772 11.4341L82.2564 11.6804C80.3352 12.2568 78.9089 13.8758 78.579 15.8544L78.0759 18.8729C77.6625 21.3537 79.0629 23.7803 81.4177 24.6634L85.8717 26.3336C88.2338 27.2193 90.7699 26.2763 92.0811 24.2999L86.6518 22.2637Z" fill="#E3AA75" />
+                      <path d="M98.0031 42.251L96.0735 37.7484C95.711 36.9027 95.6808 36.0024 95.9004 35.1729L94.2128 36.0166C92.552 36.8469 91.8262 38.8282 92.5577 40.5349L94.2615 44.5102C95.2932 46.9171 98.5029 47.3857 100.179 45.3738L100.86 44.5564C99.6551 44.3107 98.553 43.5346 98.0031 42.251Z" fill="#E3AA75" />
+                      <path d="M35.1777 41.7528C31.3038 41.7528 28.1637 38.6124 28.1637 34.7388C28.1637 33.7686 28.361 32.8446 28.7171 32.0044C26.2019 33.0704 24.4375 35.5615 24.4375 38.465C24.4375 42.3386 27.5779 45.479 31.4515 45.479C34.3552 45.479 36.8463 43.7143 37.9121 41.1993C37.0716 41.5555 36.1476 41.7528 35.1777 41.7528Z" fill="#B67F5F" />
+                      <path d="M37.6996 76.0562C34.7941 76.0562 32.4391 73.7009 32.4391 70.7957C32.4391 70.0537 32.5963 69.3498 32.8735 68.7095C31.0071 69.5175 29.6992 71.3723 29.6992 73.5355C29.6992 76.441 32.0545 78.796 34.9597 78.796C37.1232 78.796 38.9777 77.4881 39.7858 75.6218C39.1455 75.8989 38.4416 76.0562 37.6996 76.0562Z" fill="#B67F5F" />
+                      <path d="M68.2748 85.8085C72.1481 85.8085 75.288 82.6686 75.288 78.7953C75.288 74.9221 72.1481 71.7822 68.2748 71.7822C64.4016 71.7822 61.2617 74.9221 61.2617 78.7953C61.2617 82.6686 64.4016 85.8085 68.2748 85.8085Z" fill="#CD916E" />
+                      <path d="M72.0019 82.0833C68.1281 82.0833 64.9879 78.943 64.9879 75.0693C64.9879 74.0992 65.1852 73.1752 65.5413 72.335C63.0262 73.4009 61.2617 75.8921 61.2617 78.7955C61.2617 82.6692 64.4021 85.8095 68.2757 85.8095C71.1794 85.8095 73.6705 84.0449 74.7363 81.5299C73.8961 81.886 72.9721 82.0833 72.0019 82.0833Z" fill="#B67F5F" />
+                      <path d="M54.1746 50.7392C56.1112 50.7392 57.6812 49.1693 57.6812 47.2326C57.6812 45.296 56.1112 43.7261 54.1746 43.7261C52.2379 43.7261 50.668 45.296 50.668 47.2326C50.668 49.1693 52.2379 50.7392 54.1746 50.7392Z" fill="#CD916E" />
+                      <path d="M31.4515 29.8101C26.6792 29.8101 22.7969 33.6927 22.7969 38.4647C22.7969 43.2367 26.6795 47.1193 31.4515 47.1193C36.2238 47.1193 40.1063 43.2367 40.1063 38.4647C40.1063 33.6927 36.2235 29.8101 31.4515 29.8101ZM31.4515 43.8383C28.4885 43.8383 26.0781 41.4277 26.0781 38.4649C26.0781 35.5022 28.4887 33.0915 31.4515 33.0915C34.4143 33.0915 36.8251 35.5022 36.8251 38.4649C36.8251 41.4277 34.4143 43.8383 31.4515 43.8383Z" fill="#1F2937" />
+                      <path d="M59.6211 78.7957C59.6211 83.568 63.5037 87.4503 68.2757 87.4503C73.0478 87.4503 76.9304 83.5678 76.9304 78.7957C76.9304 74.0237 73.0478 70.1411 68.2757 70.1411C63.5037 70.1411 59.6211 74.0235 59.6211 78.7957ZM68.2759 73.4221C71.2389 73.4221 73.6493 75.8328 73.6493 78.7955C73.6493 81.7583 71.2387 84.1689 68.2759 84.1689C65.3132 84.1689 62.9026 81.7583 62.9026 78.7955C62.9026 75.8328 65.313 73.4221 68.2759 73.4221Z" fill="#1F2937" />
+                      <path d="M34.9597 66.6338C31.1543 66.6338 28.0586 69.7298 28.0586 73.5351C28.0586 77.3405 31.1543 80.4362 34.9597 80.4362C38.7651 80.4362 41.8611 77.3405 41.8611 73.5351C41.8611 69.7298 38.7651 66.6338 34.9597 66.6338ZM34.9597 77.155C32.9636 77.155 31.3398 75.5312 31.3398 73.5351C31.3398 71.539 32.9636 69.915 34.9597 69.915C36.9558 69.915 38.5798 71.539 38.5798 73.5351C38.5798 75.5312 36.9558 77.155 34.9597 77.155Z" fill="#1F2937" />
+                      <path d="M49.0977 47.2326C49.0977 50.0711 51.407 52.3802 54.2452 52.3802C57.0835 52.3802 59.3928 50.0709 59.3928 47.2326C59.3928 44.3943 57.0835 42.085 54.2452 42.085C51.407 42.085 49.0977 44.3943 49.0977 47.2326ZM54.2452 45.3662C55.2745 45.3662 56.1116 46.2036 56.1116 47.2326C56.1116 48.2616 55.2742 49.099 54.2452 49.099C53.2163 49.099 52.3789 48.2616 52.3789 47.2326C52.3789 46.2036 53.216 45.3662 54.2452 45.3662Z" fill="#1F2937" />
+                      <path d="M87.5638 73.4227C87.8103 73.4227 88.0605 73.3669 88.2961 73.2492C89.1066 72.8439 89.4352 71.8586 89.0298 71.0479L87.2763 67.5407C86.8712 66.7302 85.8857 66.4015 85.0753 66.807C84.2648 67.2122 83.9363 68.1976 84.3416 69.0081L86.0951 72.5153C86.3827 73.0904 86.962 73.4227 87.5638 73.4227Z" fill="#1F2937" />
+                      <path d="M68.2751 62.9016C68.5217 62.9016 68.7719 62.8458 69.0075 62.7282L72.5145 60.9747C73.3249 60.5695 73.6535 59.5841 73.2482 58.7736C72.8428 57.9632 71.8578 57.6344 71.0471 58.0399L67.5401 59.7934C66.7297 60.1986 66.4011 61.184 66.8064 61.9945C67.0939 62.5694 67.6731 62.9016 68.2751 62.9016Z" fill="#1F2937" />
+                      <path d="M19.4623 58.4872C19.7497 59.0621 20.329 59.3944 20.931 59.3944C21.1775 59.3944 21.4278 59.3386 21.6633 59.2209C22.4738 58.8158 22.8024 57.8303 22.397 57.0199L20.6435 53.5129C20.2384 52.7024 19.2529 52.3736 18.4425 52.7792C17.632 53.1843 17.3034 54.1698 17.7088 54.9802L19.4623 58.4872Z" fill="#1F2937" />
+                      <path d="M46.5002 86.096L42.9933 87.8495C42.1828 88.2546 41.8542 89.2401 42.2596 90.0506C42.547 90.6255 43.1263 90.9578 43.7282 90.9578C43.9748 90.9578 44.225 90.902 44.4606 90.7843L47.9676 89.0308C48.7781 88.6257 49.1066 87.6402 48.7013 86.8297C48.2962 86.0192 47.3107 85.6906 46.5002 86.096Z" fill="#1F2937" />
+                      <path d="M48.394 19.7699L46.6405 18.0162C46 17.3755 44.9611 17.3755 44.3204 18.0162C43.6797 18.6569 43.6797 19.6955 44.3204 20.3362L46.0741 22.0899C46.3944 22.4104 46.8144 22.5705 47.2342 22.5705C47.6539 22.5705 48.0739 22.4104 48.3942 22.0899C49.0347 21.4495 49.0347 20.4108 48.394 19.7699Z" fill="#1F2937" />
+                      <path d="M40.8126 58.3472C40.1719 58.988 40.1719 60.0268 40.8126 60.6673L42.5661 62.4208C42.8863 62.7411 43.3063 62.9014 43.7261 62.9014C44.1459 62.9014 44.5659 62.7413 44.8862 62.4208C45.5269 61.7801 45.5269 60.7412 44.8862 60.1007L43.1326 58.3472C42.4921 57.7065 41.4533 57.7065 40.8126 58.3472Z" fill="#1F2937" />
+                      <path d="M61.375 96.3311V98.0846C61.375 98.9906 62.1096 99.7252 63.0156 99.7252C63.9217 99.7252 64.6562 98.9906 64.6562 98.0846V96.3311C64.6562 95.425 63.9217 94.6904 63.0156 94.6904C62.1096 94.6904 61.375 95.425 61.375 96.3311Z" fill="#1F2937" />
+                      <path d="M53.6522 32.6112L55.4057 30.8577C56.0464 30.217 56.0464 29.1782 55.4057 28.5377C54.765 27.8969 53.7261 27.8969 53.0856 28.5377L51.3321 30.2912C50.6914 30.9319 50.6914 31.9707 51.3321 32.6112C51.6524 32.9315 52.0724 33.0918 52.4921 33.0918C52.9119 33.0918 53.3319 32.9315 53.6522 32.6112Z" fill="#1F2937" />
+                      <path d="M80.8453 26.1989L85.2993 27.8693C86.0815 28.1626 86.9023 28.3081 87.7213 28.3081C88.8279 28.3081 89.9313 28.0425 90.9307 27.5175C92.67 26.6042 93.941 24.9872 94.4174 23.0813L96.0049 16.7309C96.6145 14.2925 95.8931 11.8008 94.0751 10.0652C92.2568 8.3294 89.7342 7.72456 87.3266 8.44687L81.7883 10.1085C79.2869 10.8588 77.3932 13.008 76.964 15.584L76.4609 18.6026C75.9202 21.8488 77.764 25.0435 80.8453 26.1989ZM79.6977 19.1422L80.2009 16.1237C80.426 14.7725 81.4193 13.645 82.7314 13.2515L88.2697 11.5899C88.6205 11.4847 88.976 11.4333 89.3269 11.4333C90.2391 11.4333 91.1206 11.7813 91.8095 12.4388C92.763 13.3491 93.1414 14.6561 92.8218 15.9351L91.2344 22.2855C90.9806 23.3 90.3312 24.1265 89.4054 24.6125C88.4797 25.0986 87.4308 25.1642 86.4514 24.7971L81.9975 23.1268C80.3811 22.5206 79.414 20.845 79.6977 19.1422Z" fill="#1F2937" />
+                      <path d="M93.4783 34.5495C91.0438 35.7666 89.9768 38.6797 91.0488 41.1815L92.7527 45.1569C93.4638 46.8159 94.9546 47.9621 96.7407 48.2229C96.9945 48.2599 97.2475 48.278 97.4985 48.278C99.0135 48.278 100.447 47.6141 101.439 46.4245L104.18 43.1354C105.092 42.0406 105.503 40.6581 105.338 39.2427C105.172 37.8274 104.454 36.5768 103.313 35.722L100.987 33.9768C99.4169 32.7992 97.3512 32.6129 95.5958 33.4907L93.4783 34.5495ZM97.0636 36.4255C97.3298 36.2922 97.6157 36.2266 97.9001 36.2266C98.2951 36.2266 98.6869 36.3535 99.0179 36.6016L101.345 38.3467C101.758 38.6567 102.019 39.1102 102.079 39.6234C102.138 40.1366 101.989 40.6379 101.659 41.0348L98.9177 44.3239C98.4924 44.8342 97.8714 45.0718 97.2143 44.9758C96.557 44.8799 96.03 44.4746 95.7684 43.8641L94.0645 39.8887C93.6758 38.9816 94.0628 37.9252 94.9454 37.484L97.0636 36.4255C97.0634 36.4255 97.0634 36.4255 97.0636 36.4255Z" fill="#1F2937" />
+                      <path d="M106.851 29.5846C109.689 29.5846 111.999 27.2753 111.999 24.437C111.999 21.5987 109.689 19.2896 106.851 19.2896C104.012 19.2896 101.703 21.5989 101.703 24.4372C101.703 27.2755 104.012 29.5846 106.851 29.5846ZM106.851 22.5708C107.88 22.5708 108.717 23.4082 108.717 24.4372C108.717 25.4662 107.88 26.3036 106.851 26.3036C105.822 26.3036 104.984 25.4662 104.984 24.4372C104.984 23.408 105.822 22.5708 106.851 22.5708Z" fill="#1F2937" />
+                      <path d="M107.356 61.2078C106.607 61.3176 105.848 61.3734 105.098 61.3734C98.1701 61.3734 92.0919 56.942 89.9726 50.3458C89.3932 48.5426 87.9092 47.2085 86.0999 46.864C73.6736 44.4982 64.6545 33.5911 64.6545 20.9294C64.6545 15.7008 66.1858 10.6425 69.0831 6.30158C69.7186 5.34936 69.8378 4.15411 69.402 3.10411C68.9654 2.05214 68.0324 1.29111 66.9065 1.06821C61.3249 -0.0371365 55.5978 -0.285855 49.8854 0.329488C38.4535 1.56039 27.7984 6.27555 19.0716 13.9659C18.3917 14.5649 18.3263 15.6017 18.9255 16.2814C19.5244 16.9611 20.5613 17.0267 21.2409 16.4275C29.4563 9.18799 39.4827 4.74955 50.2365 3.59214C55.6195 3.01246 61.0136 3.24652 66.2691 4.28733C66.3074 4.29499 66.3496 4.30986 66.3715 4.36236C66.392 4.41202 66.3752 4.44855 66.3538 4.48049C63.0955 9.36255 61.3733 15.0507 61.3733 20.9296C61.3733 35.1648 71.5143 47.4275 85.4861 50.0875C86.1148 50.2071 86.6369 50.6908 86.8487 51.3496C89.4054 59.3078 96.7394 64.6547 105.098 64.6547C106.007 64.6547 106.927 64.5871 107.833 64.4541C107.954 64.4361 108.016 64.5077 108.018 64.5258C106.437 74.2514 102.14 83.3307 95.5923 90.7824C94.9943 91.4631 95.0612 92.4998 95.7419 93.0979C96.0534 93.3715 96.4398 93.506 96.8243 93.506C97.28 93.506 97.733 93.3175 98.0574 92.9484C105.012 85.0332 109.577 75.3872 111.257 65.0528C111.428 64.0019 111.096 62.9629 110.347 62.2016C109.575 61.4176 108.457 61.0462 107.356 61.2078Z" fill="#1F2937" />
+                      <path d="M90.7836 95.5946C81.1638 104.058 68.811 108.718 56.0004 108.718C48.616 108.718 41.4743 107.222 34.7733 104.27C28.2992 101.419 22.5428 97.354 17.6644 92.1878C12.7937 87.0299 9.07149 81.0626 6.60093 74.4515C4.03193 67.5767 2.9454 60.3229 3.3713 52.8918C4.03521 41.3081 8.6738 30.0683 16.4324 21.2424C17.0307 20.5618 16.964 19.5252 16.2835 18.9271C15.6031 18.3288 14.5663 18.3953 13.9682 19.0761C5.7279 28.4495 0.801209 40.392 0.0955215 52.7041C-0.356635 60.5929 0.797928 68.2961 3.52749 75.6002C6.15227 82.6238 10.106 88.9628 15.279 94.4405C20.4601 99.9272 26.5741 104.245 33.451 107.273C40.5713 110.409 48.158 111.999 56.0004 111.999C69.6092 111.999 82.7318 107.048 92.951 98.0579C93.6313 97.4594 93.6975 96.4228 93.099 95.7425C92.5008 95.0624 91.4639 94.9961 90.7836 95.5946Z" fill="#1F2937" />
+                    </svg>
+                  </div>
+                  <div class="mt-12">
+                    <h1 role="main" class="text-2xl dark:text-white lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800">Notice of Intended Use</h1>
+                  </div>
+                  <div class="mt">
+                    <p class="mt-3 sm:w-80 text-base dark:  text-white leading-5 text-center text-gray-800">
+                      This platform has been created to present documented cases, personal testimonies, and procedural concerns submitted by students who believe they have been unfairly treated, dismissed, or otherwise harmed by the actions of Webster University Tashkent. 
+                    </p>
+                  </div>
+                  <div class="mt">
+                    <p class="mt-6 sm:w-80 text-base dark:  text-white leading-5 text-center text-gray-800">
+                      It's intended for formal review by the Higher Learning Commission (HLC) and the Ministry of Higher Education of the Republic of Uzbekistan.
+                    </p>
+                  </div>
+                  <br/>
+                    <p class="text-gray-400 text-xs mb-4 text-center">
+                      By clicking "I Agree", you acknowledge that this content is intended for official, academic, and institutional review purposes only.
+                    </p>
+                  <button id="cookieClose" class="w-full dark:text-gray-800 dark:hover:bg-gray-100 dark:bg-white sm:w-auto mt-14 text-base leading-4 text-center text-white py-6 px-16 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 hover:bg-black">I agree!</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        `;
+        setTimeout(() => {
+          setClickEvent(callback, 'cookieClose');
+        }, 499);
+        return structure;
+    };
+    function getLoading(){
+      const dataShow = `<div class="loaderWrapper"><div class="loader"></div></div>`;
+      return dataShow;
+    };
+
+    const enablePanel = (dataSource = null, waitingTime = 0, blur = false, autoClose = 0) => {
+      const panel = document.getElementById('popupLayer');
+      if (panel) {
+        if (closeTimeout) {
+          clearTimeout(closeTimeout);
+          closeTimeout = null;
+        }
+
+        panel.classList.remove('invisible');
+        if (blur) {
+          panel.classList.add('blurred');
+        } else {
+          panel.classList.remove('blurred');
+        }
+
+        const closeIt = () => {
+          panel.classList.add('slowRemove');
+          localStorage.setItem('webster-agreed', 1)
+          closeTimeout = setTimeout(() => {
+            panel.innerHTML = '';
+            panel.classList.add('invisible');
+            panel.classList.remove('slowRemove');
+          }, 899);
+        };
+
+        const showIt = () => {
+          panel.innerHTML = getLoading();
+          setTimeout(() => {
+            panel.innerHTML = dataSource ? dataSource(closeIt) : '';
+          }, waitingTime);
+        };
+
+        if (dataSource) {
+          showIt();
+        }
+
+        if (autoClose > 0) {
+          closeTimeout = setTimeout(() => {
+            closeIt();
+          }, autoClose);
+        }
+      }
+    };
+
+    function HandleSubmission(){
+      const triggerPoint = document.getElementById('submissionTrigger');
+      triggerPoint.addEventListener('submit', function(event) {
+        event.preventDefault();
+        enablePanel(submissionSuccess, 3000, true, 3999)
+      });
+    };
+    const SubmissionPanel = (callback)=>{
+      const structure = `
+          <div class="modal">
+            <div class="modal-header">
+              <button id="closeFileTrigger" class="btn-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="var(--c-text-secondary)"/></svg>
+              </button>
+            </div>
+            <div class="submission-title">
+              <div>
+                <h1 class="text-4xl md:text-4xl font-extrabold tracking-tight text-gray-600">
+                  Hi <span class="text-yellow-500 text-3xl">✋</span>
+                </h1>
+              </div>
+              <div>
+                <p>
+                  Were you mistreated or unfairly dismissed by Webster University in Tashkent? Then submit your case. Submission will be reviewed carefully.
+                </p>
+              </div>
+            </div>
+            <div style="height:10px;"></div>
+            <form id="submissionTrigger">
+            <div style="width:90%; margin:auto">
+               <input
+                  placeholder="Your Name"
+                  class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 shadow-sm"
+                  name="student-name"
+                  type="text"
+                  required
+                />
+                <div style="height:10px;"></div>
+                <input
+                  placeholder="Telegram username or link"
+                  class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 shadow-sm"
+                  name="student-contact"
+                  type="text"
+                  required
+                />
+            </div>
+            <div class="modal-body">
+                <div class="modal-logo">
+                    <span class="logo-circle">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="419.116" viewBox="0 0 512 419.116">
+                        <defs>
+                          <clipPath id="clip-folder-new">
+                            <rect width="512" height="419.116" />
+                          </clipPath>
+                        </defs>
+                        <g id="folder-new" clip-path="url(#clip-folder-new)">
+                          <path id="Union_1" data-name="Union 1" d="M16.991,419.116A16.989,16.989,0,0,1,0,402.125V16.991A16.989,16.989,0,0,1,16.991,0H146.124a17,17,0,0,1,10.342,3.513L227.217,57.77H437.805A16.989,16.989,0,0,1,454.8,74.761v53.244h40.213A16.992,16.992,0,0,1,511.6,148.657L454.966,405.222a17,17,0,0,1-16.6,13.332H410.053v.562ZM63.06,384.573H424.722L473.86,161.988H112.2Z" fill="var(--c-action-primary)" stroke="" stroke-width="1" />
+                        </g>
+                      </svg>
+                    </span>
+                </div>
+                <p class="modal-description">Attach the case below (ideally PDF)</p>
+                    <div class="relative">
+                      <input id="fileUpload" type="file" class="hidden" />
+                      <button 
+                        type="button"
+                        onclick="document.getElementById('fileUpload').click()" 
+                        class="upload-area flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl p-6 hover:border-blue-500 transition duration-200"
+                      >
+                        <span class="upload-area-icon mb-4">
+                          <!-- Your SVG icon here -->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#3b82f6" viewBox="0 0 24 24">
+                            <path d="M12 0l8 8h-6v8h-4v-8h-6l8-8zm-8 20v2h16v-2h-16z"/>
+                          </svg>
+                        </span>
+                        <span class="upload-area-title text-xl font-bold text-gray-700">Drag file(s) here to upload.</span>
+                        <span class="upload-area-description text-sm text-gray-500 mt-2 text-center">
+                          Alternatively, you can select a file by <br />
+                          <strong class="text-blue-600 underline">clicking here</strong>
+                        </span>
+                      </button>
+                    </div>
+            </div>
+            <p style="color:red; margin-left: 20px">Case will not be published without your consent!</p>
+            <div class="modal-footer">
+              <button id="cancelClicker" class="btn-secondary">Cancel</button>
+              <button id="submissionTrigger" class="btn-primary">Submit</button>
+            </div>
+            </form>
+        </div>
+      `;
+      setTimeout(() => {
+          setClickEvent(callback, 'closeFileTrigger');
+          setClickEvent(callback, 'cancelClicker');
+          HandleSubmission();
+      }, 499);
+      return structure;
+    };
+    const submissionSuccess = ()=>{
+      const structure = `
+          <div class="slowShow" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+            <h1 class="text-5xl md:text-6xl tracking-tight text-gray-900">
+              Contacting Soon!
+            </h1>   
+          </div>  
+        `;
+        return structure;
+    };
+  const showSubmissionPanel = ()=>enablePanel(SubmissionPanel, 499, true);
+  const handleAgreement = ()=>{
+    const previous_interaction = localStorage.getItem('webster-agreed');
+    if(!(previous_interaction == 1)){enablePanel(getCookie, 0, true);}
+  };
+  handleAgreement();
+  </script>
+</html>
