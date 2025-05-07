@@ -3,15 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./assets/img/justice.png" />
-    <link rel="stylesheet" href="./style.css"></link>
-    <link rel="stylesheet" href="./article_style.css"></link>
-    <link rel="stylesheet" href="./sidebarsub.css"></link>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/style.css"></link>
+    <link rel="stylesheet" href="./assets/css/article_style.css"></link>
+    <link rel="stylesheet" href="./assets/css/sidebarsub.css"></link>
+    <link rel="stylesheet" href="./assets/css/output.css"></link>
     <title>Unfair WUT</title>
 </head>
 
 <body>
-  <div id="popupLayer" class="popupLayer invisible"></div>
+  <div id="popupLayer" class="popupLayer invisible overflow-hidden"></div>
     <div class="mainbody">
         <div class="main1"></div>
         <div class="topSide">
@@ -29,7 +29,7 @@
               <section class="sidebar-section cases">
                 <h2>Cases</h2>
                 <div class="case-list">
-                  <button onclick="openUpBar();" class="button-89" role="button">Mansur's Case</button>
+                  <button onclick="openUpBar();" class="button-89" role="button">Davlatov's Case</button>
                 </div>
                 <button onclick="showSubmissionPanel()" class="button-85" role="button">Add Your Case</button>
               </section>
@@ -188,7 +188,7 @@
     title: "Unfair Webster University in Tashkent",
     author: "Mansur Davlatov.",
     thumbnail: "https://news.webster.edu/images/webster_tashkent_wide.jpg",
-    date: 'May 30, 2025.',
+    date: 'May 4, 2025.',
     mainContent: {
       english: [
         { header:'Overview',
@@ -219,7 +219,7 @@ for which he was never granted a proper formal hearing, nor provided with writte
             'Suspension Without Notice, Explanation, or Procedural Transparency',
             'Dismissal was issued based on a Code of Conduct not referenced in the student’s signed contract.',
             'No proper formal hearing was conducted, and no advance notice was provided.',
-            "The official dismissal letter contained no appeal instructions, in direct violation of the university's own policies.",
+            "The official dismissal letter deliberately did not include appeal instructions, in direct violation of the university's own policies.",
             "Communication was almost completely obstructed for nearly two months deliberately, during which Mr. Davlatov’s university email was disabled and no alternative contact was provided.",
             "The dismissal document was not delivered until Mr. Davlatov physically appeared on campus, two weeks after it had been finalized.",
             "Citation of a “GDPR document” as grounds for dismissal, which has never been provided or verified, raising questions of procedural fabrication.",
@@ -341,10 +341,9 @@ Mr. Mansur Davlatov’s dismissal from Webster University Tashkent was executed 
         },
         {
           text: `
-            According to standard academic protocols and due process norms—particularly those referenced in Webster University’s official U.S. policies—students must be provided with clear information on how to challenge or appeal disciplinary decisions. 
-            The omission of such instructions constitutes a serious procedural failure. Given that appeal instructions are typically standard in dismissal letters, 
-            their absence in this case suggests either gross procedural oversight or a deliberate effort to obstruct the student’s right to contest the decision — the latter being more likely, considering the broader context of the case.
-          `,
+According to standard academic protocols and due process norms—particularly those outlined in Webster University’s official U.S. policies—students must be provided with clear instructions on how to challenge or appeal disciplinary decisions. 
+The omission of such instructions in the official dismissal letter constitutes a serious procedural failure. 
+Given that appeal guidelines are routinely included in such correspondence, their absence here—combined with the fact that Mansur Davlatov’s email to the Senior Site Registrar and Dr. Anthony Jarvis expressing his intent to appeal was left unanswered for over three weeks, as detailed in the 'Obstructed Communication and Deliberate Isolation' section—strongly indicates that this was not an oversight, but a deliberate attempt to obstruct his right to appeal.          `,
         },
         {
           text: `
@@ -405,9 +404,16 @@ The university’s failure to facilitate communication during a critical discipl
         {image: './assets/img/february13-studentAffairs.png'},
         {text:'Student Affairs Office'},
         {image: './assets/img/march-30-noResponse.png'},
-        {text:'Dr. Anthony Jarvis'},
+        {
+          text: `
+Mr. Davlatov’s email to the Senior Site Registrar & Supervisor requesting to appeal, which went unanswered—as shown in the screenshot—is clear proof that the omission of appeal instructions in the dismissal letter was intentional.          `
+        },
         {image: './assets/img/april-2-AnthonyJarvis.png'},
-        {text:'Dr. Anthony Jarvis'},
+        {
+          text: `
+          Mr. Davlatov’s email to Dr. Anthony Jarvis requesting to appeal was left unanswered, as shown in the screenshot—another clear evidence that the omission of appeal instructions in the dismissal letter was intentional.
+          `,
+        },
         {image: './assets/img/April2-no-Response.png'},
         {text:'Senior Site Registrar & Supervisor'},
         {text:' ', space: 2},
@@ -570,10 +576,11 @@ This suspicious reference will become even more critical in light of the subsequ
         {
           header: [1, 'Claim that conduct process was “rigorously followed” is contradicted directly by the reality that:'],
           listData: [
-            'Administration deliberately failed to notify Mr. Davlatov of a meeting scheduled on February 28th',
+            'The administration failed to notify Mr. Davlatov of a meeting scheduled for February 28th, and the dismissal document was never communicated to him until he made a physical visit.',
             'No notice of charges or hearing format was ever provided.',
             'All follow-up requests, including appeals, were deliberately ignored.',
-            'Administration likely deliberately failed to provide Mr. Davlatov with alternative forms of communication',
+            'Administration likely deliberately failed to provide Mr. Davlatov with alternative forms of communication.',
+            'The dismissal document deliberately did not include appeal instructions, and when requested via email, the inquiry was ignored.'
           ],
           
         },
@@ -638,8 +645,40 @@ This suspicious reference will become even more critical in light of the subsequ
         },
         {
           text: `
-            Taken together — the university’s failure to identify the so-called GDPR team members, the Registrar’s inability to verify the GDPR-related documentation, and the unexplained and legally questionable reference to GDPR within the official dismissal record — all point to the fabrication or misuse of procedural elements within Webster University in Tashkent.
+            Taken together — the university’s failure to identify the so-called GDPR team members, the Registrar’s inability to verify the GDPR-related documentation, and the unexplained and legally questionable reference to GDPR within the official dismissal record — all directly point to the fabrication or misuse of procedural elements within Webster University in Tashkent, which were unjustifiably used to justify Mr. Davlatov’s dismissal.
           `,
+        },
+        {
+          header: [
+            2, 
+            `
+              In Summary
+            `,
+          ],
+          text: `
+          It is evident that Mr. Davlatov, a graduating student with no disciplinary record and a history of standing as a senior student, had purely positive intentions throughout his time at the university. 
+          In light of this, it is clear that:
+
+          `,
+        },
+        {
+          listData: [
+            'The university deliberately denied Mr. Davlatov a fair opportunity to appeal his dismissal.',
+            'The claims of GDPR violations were fabricated and misrepresented, with no legitimate evidence or support.',
+            'Mr. Davlatov’s project was academically approved and carried no malicious intent, yet the university appears to have disregarded this crucial context.',
+            'The dismissal was unfair, disproportionate, and unsupported by any proper evidence or communication.',
+            'The university actively withheld transparency, carrying out actions and decisions without providing any clear or open communication.',
+            'The university actively refused to respond to Mr. Davlatov’s emails despite his multiple attempts over several months.',
+          ],
+        },
+        {
+          text: ' ', space: 1,
+        },
+        {
+          header: [1, 'Considering all of the above, it is evident that Mr. Davlatov was significantly mistreated, and his fundamental rights were entirely disregarded throughout the process.']
+        },
+        {
+          text: ' ', space: 2,
         },
         {
           header: [
@@ -653,13 +692,13 @@ This suspicious reference will become even more critical in light of the subsequ
           header: [
             1, 
             `
-              Mr. Davlatov can provide personal communications with university staff, along with other supporting documents, to demonstrate the lack of transparency and responsiveness in his case.
-              These materials, including a screenshot and an official document, will be made available for comparison and further validation, if requested by relevant regulatory bodies. 
-              This will ensure the integrity of the evidence and help substantiate the claims. 
-              These documents will be shared only for official purposes and to ensure the credibility of the investigation.
+              Mr. Davlatov possesses personal communications with university staff, including private chats, emails, and other supporting documents, which have not yet been publicly shared. 
+              These materials, along with a screenshot and an official document, can be made available for comparison and further validation if requested by relevant regulatory bodies. 
+              This ensures the integrity of the evidence and helps substantiate the claims.
+              These documents will be shared only for official purposes and to uphold the credibility of the investigation.
             `,
           ]
-        }
+        },
       ],
       
       // uzbek: [
@@ -844,9 +883,9 @@ This suspicious reference will become even more critical in light of the subsequ
     const getCookie = (callback)=>{
       const layer = document.getElementById('popupLayer');
       const structure = `
-          <div class="relative slowShow">
+          <div class="relative slowShow ">
             <div id="menu" class="w-full h-full bg-gray-900 bg-opacity-80 top-0 fixed sticky-0">
-              <div class="2xl:container  2xl:mx-auto py-5 px-4 md:px-28 flex justify-center items-center">
+              <div class="2xl:container  2xl:mx-auto py-5 px-4 md:px-28 flex justify-center items-center ">
                 <div class="w-96 md:w-auto dark:bg-gray-800 relative flex flex-col justify-center items-center bg-white py-10 px-4 md:px-24 xl:py-24 xl:px-36">
                   <div role="banner">
                     <svg class="w-20 md:w-24 lg:w-28" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
