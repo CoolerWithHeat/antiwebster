@@ -358,3 +358,70 @@
 #menu::-webkit-scrollbar-track {
   background: transparent; /* Or a light color */
 }
+
+.cookie-body{
+  width: 100%;
+  height: 100%;
+  background-color: #1a1d26;
+  display: flex;
+  align-items: center;
+}
+
+.cookie-container {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1d26;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 90%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cookie-container {
+  max-width: 600px;
+  padding: 10px;
+  background-color: #222733;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.cookie-icon {
+  width: 75px;
+  height: 75px;
+}
+
+.note-h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cookie-container p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.note {
+  font-size: 12px;
+  margin-top: 15px;
+  color: #cccccc;
+}
+
+.agreeButton {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.agreeButton:hover {
+  background-color: #e0e0e0;
+}
