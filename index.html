@@ -35,7 +35,7 @@
               </section>
               <div id="nav-bar">
                 <input id="nav-toggle" type="checkbox" />
-                <div id="nav-header"><a id="nav-title" href="" target="_blank"><i class="fab fa-codepen"></i>Sources</a><label id="NavToggleSwitch" for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+                <div id="nav-header"><a id="nav-title" href="" target="_blank" style="font-size:20px"><i class="fab fa-codepen"></i>Relevant Authorities</a><label id="NavToggleSwitch" for="nav-toggle"><span id="nav-toggle-burger"></span></label>
                     <hr />
                 </div>
                 <div id="nav-content">
@@ -156,12 +156,17 @@
     };
     loadImageReviewers();
 </script>
+<script src="./assets/js/translation.js"></script>
 <script>
   let closeTimeout = null;
   const language_index = {
     1: 'english',
     2: 'uzbek',
     3: 'russian',
+  };
+  const click_instructions = {
+    1: 'Click to enlarge',
+    2: 'Kattalashtirish uchun bosing',
   };
   function Redirect(index) {
     const indecies = {
@@ -174,7 +179,7 @@
   function tranlationNote(show=true){
     const structure = `
           <div class="translation-notice">
-            <p class="notice-text">Uzbek and Russian translation will be published shortly</p>
+            <p class="notice-text">Russian translation will be published shortly</p>
           </div>      
     `;
     const noteLayer = document.getElementById('languageNote');
@@ -185,7 +190,7 @@
     };
   };
   const data = {
-    title: "Unfair Webster University in Tashkent",
+    title: ["Unfair Webster University in Tashkent", "Toshkentdagi Adolatsiz Webster Universiteti"],
     author: "Mansur Davlatov.",
     thumbnail: "https://news.webster.edu/images/webster_tashkent_wide.jpg",
     date: 'May 4, 2025.',
@@ -195,9 +200,6 @@
           text: `
 In early 2025, 
 Mr. Mansur Davlatov, a senior student at Webster University’s Tashkent campus, was dismissed from the university under circumstances that raise serious legal and ethical concerns. The case, as presented on this website, outlines a pattern of administrative misconduct, due process violations, and breach of academic contract — all of which were executed without transparency or accountability.
-
-
-
 `
         },
         {text: `
@@ -227,19 +229,17 @@ for which he was never granted a proper formal hearing, nor provided with writte
         },
         {text: ' ', space:1},
         { header: [2, 'Suspension With no Notice'], text: `
-          On January 31, Mr. Mansur Davlatov discovered that his access to the university's online student system had been suspended without any prior warning or notification, 
-          the issue occurred around 3:00 PM local time, with no email, message, or official communication from the university indicating a reason or context.
-The following day, Mr. Davlatov attended a scheduled meeting with the GCP (Global Citizenship Program) Lead, where he openly discussed a situation involving an alleged academic misconduct. Following that, acting on his own initiative, he voluntarily approached the Senior Site Registrar and Supervisor, Mr. Ruban, in his office to further clarify and understand the situation.
-
-
-
+On January 31, Mr. Mansur Davlatov discovered that his access to the university's online student system had been suspended without any prior warning or notification, 
+the issue occurred around 3:00 PM local time, with no email, message, or official communication from the university indicating a reason or context.
+The following day, Mr. Davlatov attended a scheduled meeting with the GCP (Global Citizenship Program) Lead, where he openly discussed a situation involving an alleged academic misconduct. 
+Following that, acting on his own initiative, he voluntarily approached the Senior Site Registrar and Supervisor, Mr. Ruban, in his office to further clarify and understand the situation.
         ` },
         { 
           text: `
             The discussion with Mr. Ruban was calm, professional, and respectful. 
             However, during their exchange, Dr. Anthony Jarvis, Rector of Webster University Tashkent, entered the office, and Mr. 
-            Ruban briefed him on the matter. What followed was an unexpectedly aggressive, stressful and disrespectful conversation, during which Mr. 
-            Davlatov was first told that he had been placed under suspension.
+            Ruban briefed him on the matter. 
+            What followed was an unexpectedly aggressive, stressful, and disrespectful conversation, during which Mr. Davlatov was told that he had been placed under suspension and accused of violating GDPR.
           `
         },
         {
@@ -255,24 +255,48 @@ The following day, Mr. Davlatov attended a scheduled meeting with the GCP (Globa
         {
           header: [2, 'Breach of Contract: Dismissal Based on Unreferenced Code of Conduct'],
           text: `
-Mr. Mansur Davlatov’s dismissal from Webster University Tashkent was executed based on a Student Code of Conduct that was not explicitly referenced in the enrollment contract he signed upon joining the university.
+            Mr. Mansur Davlatov was dismissed from Webster University Tashkent based on an alleged violation of the Student Code of Conduct (SCC) published at webster.uz. 
+            However, the disciplinary action taken against him raises serious concerns about both the legal enforceability of the SCC and the procedural validity of the university's actions.
           `
         },
         {image: './assets/img/agreement.png'},
         {
-          text : `
-          As shown in the contract excerpt above, the agreement explicitly states that Webster University USA policies and standards hosted at webster.edu.
-          There is no direct or explicit mention of a separate Student Code of Conduct for Webster University Tashkent, nor any documentation linking students to localized disciplinary procedures available on webster.uz.
-        `},
+          header: [1, `
+            The enrollment contract signed by Mr. Davlatov makes no explicit reference to the webster.uz Student Code of Conduct. Instead, it refers only to:
+          `],
+        },
         {
-          header: [1, 'This omission raises serious contractual and procedural issues, including:'],
           listData: [
-            'A lack of clear binding authority for the specific policy used in the dismissal',
-            'A potential misrepresentation of governing rules and standards at the time of enrollment;',
-            'A procedural breakdown, as the disciplinary actions taken did not follow the due process outlined in the referenced U.S. policies.'
+            'Webster University USA’s academic policies, hosted at webster.edu',
+            'Unspecified “internal regulations of the center,” with no definitions, document titles, or access instructions.'
           ],
+        },
+        {text: ' ', space: 1},
+        {
           text: `
+            There is no indication that the SCC hosted at webster.uz was annexed, hyperlinked, or otherwise presented as part of the contractual framework governing Mr. Davlatov’s obligations as a student.
           `,
+        },
+        {
+          header: [1, 'There is no evidence that Mr. Davlatov was ever:'],
+          listData: [
+            'Formally informed of the SCC',
+            'Asked to acknowledge or agree to its terms',
+          ],
+        },
+        {text: ' ', space: 1},
+        {
+          text: `
+            The university’s decision to dismiss Mr. Davlatov under the webster.uz Student Code of Conduct — without properly incorporating that document into the contract or ensuring the student’s informed consent — raises serious questions of contractual validity and procedural fairness. 
+            The enforcement of undisclosed or unspecified internal regulations could be deemed a breach of contract and subject to legal challenge under Uzbek civil law.
+          `,
+        },
+        {},
+        {
+          text: `
+            While it is possible that the university may argue the Student Code of Conduct falls under the broadly stated “internal regulations of the center,” the absence of any explicit reference to the SCC in the contract undermines that position. 
+            More importantly, even if the SCC were assumed to apply, the university’s failure to follow its own prescribed procedures during the conduct and dismissal process further reinforces the breach of contract. This procedural inconsistency is outlined in detail below and highlights a lack of adherence not only to contractual obligations but also to basic principles of fairness and due process.
+        `,
         },
         {text: ' ', space: 1},
         {
@@ -289,6 +313,8 @@ Mr. Mansur Davlatov’s dismissal from Webster University Tashkent was executed 
           text: `
             No official communication was sent before this exchange. Then, on the day of the meeting, Mr. Davlatov received a vague SMS notification just two hours prior, with no formal email, agenda, or clear identification of participants or purpose
             and it was sent through the personal phone number of Senior Site Registrar & Supervisor.
+            The meeting in question was supposedly described as being with a so-called “Global GDPR Team”—a claim that is highly likely to be fabricated or false. 
+            The decision to withhold any details about the nature of the meeting or the identities of the participants in the SMS notification further supports this conclusion. This lack of transparency, particularly in such a serious matter, raises serious doubts about the legitimacy of the claim. Additional evidence presented later in this article further substantiates these concerns.
           `,
         },
         {
@@ -314,8 +340,11 @@ Mr. Mansur Davlatov’s dismissal from Webster University Tashkent was executed 
 
   Furthermore, both the Webster University Tashkent Student Code of Conduct and the Webster University USA policies explicitly state that students must be given at least three business days to prepare for a disciplinary hearing, to ensure a fair and equitable process. 
   The failure to meet this requirement appears to be highly likely intentional, constituting a clear breach of institutional policy and representing serious procedural mistreatment. 
-  This further undermines the integrity and fairness of the disciplinary process.
-          `,
+  This further undermines the integrity and fairness of the disciplinary process. 
+This clearly shows the university actively tried to conceal information, strongly suggesting that the so-called ‘Global GDPR Team’ was a misleading or fabricated claim, which was later used to obfuscate the situation under the guise of GDPR violations as a basis for dismissal.         
+Additionally, Mr. Davlatov was not provided with any evidence that was claimed to exist during the meeting.
+The failure to provide Mr. Davlatov with any evidence that was purportedly discussed during the meeting constitutes a violation of his fundamental right to access evidence.
+`,
         ]},
         {
           text: `
@@ -344,7 +373,7 @@ Mr. Mansur Davlatov’s dismissal from Webster University Tashkent was executed 
 According to standard academic protocols and due process norms—particularly those outlined in Webster University’s official U.S. policies—students must be provided with clear instructions on how to challenge or appeal disciplinary decisions. 
 The omission of such instructions in the official dismissal letter constitutes a serious procedural failure. 
 Given that appeal guidelines are routinely included in such correspondence, their absence here—combined with the fact that Mansur Davlatov’s email to the Senior Site Registrar and Dr. Anthony Jarvis expressing his intent to appeal was left unanswered for over three weeks, as detailed in the 'Obstructed Communication and Deliberate Isolation' section—strongly indicates that this was not an oversight, but a deliberate attempt to obstruct his right to appeal.          `,
-        },
+      },
         {
           text: `
             At the bottom of the letter, there appears a GDPR disclaimer—a generic legal note usually appended to email footers. 
@@ -475,12 +504,35 @@ Mr. Davlatov genuinely believes this was intentional and served to isolate him f
 
     This vague and unverified citation of a “GDPR document” raises serious concerns about the legitimacy of the dismissal process. 
     There was no attempt to formally provide or describe the document, no written copy was shared, and the nature of the alleged “GDPR team” involved remains unknown to this day. 
-    These facts, combined with the suspicious insertion of a GDPR legal note on the official dismissal letter, suggest the possible use of fabricated or procedurally invalid documentation to justify a predetermined decision.
+    
 
           `,
         },
+        {image: './assets/img/gdpr-failure.png'},
+        {text: ' ', space: 1},
+        {header: [1, `
+          As shown in the attached screenshot, Mr. Davlatov emailed Webster University in Tashkent in response to the appeal rejection claims. 
+        `
+        ]},
+        {
+          header: [1, 'Specifically requesting:'],
+        },
+        {
+          listData: [
+            'A copy of the document originating from the so-called GDPR team',
+            'The names and roles of the individuals involved in the meeting of this “Global GDPR team.”',
+          ],
+        },
+        {text: ' ', space: 1},
         {
           text: `
+          This email was entirely ignored, further proving that such a document never existed and that the individuals involved were not a legitimate team but rather part of an orchestrated process.
+          `,
+        },
+        {text: ' ', space: 1},
+        {
+          text: `
+          These facts, combined with the suspicious insertion of a GDPR legal note on the official dismissal letter, suggest the possible use of fabricated or procedurally invalid documentation to justify a predetermined decision.
 This suspicious reference will become even more critical in light of the subsequent communication between Mr. Davlatov and Webster Tashkent, as detailed in the following section — suggesting that the GDPR citation may have been a retroactive or fabricated justification, rather than a legitimate legal directive.
 
           `,
@@ -564,13 +616,14 @@ This suspicious reference will become even more critical in light of the subsequ
           header: [1, 'Rebuttal to Webster University Tashkent’s Official Dismissal Response by Davlatov'],
           text: `
             Webster University Tashkent asserts that a dismissal notification was sent to Mr. Mansur Davlatov’s university email and that he failed to appeal within the three-business-day timeframe outlined in the Student Code of Conduct (SCC). 
-            However, the university was aware that Mr. Davlatov no longer had access to his university email — a fact evident from multiple ignored communications and the broader context of events. 
+            However, the university was aware that Mr. Davlatov no longer had access to his university email —  a fact evident from multiple ignored communications, the use of SMS to Mr. Davlatov's personal phone number, and the broader context of events. 
             This raises the concern that either no email was sent, or it was intentionally sent to an inaccessible address to deprive Mr. Davlatov of the opportunity to appeal, in direct contradiction to the SCC’s stipulated procedures.
           `,
         },
         {
           text: `
-            In its response, the university outlines the three possible grounds for appeal but fails to acknowledge how its own procedural failures — including the lack of formal notice, absence of a proper hearing, and repeated rejections of communication — did in fact negatively impact Mr. Davlatov’s ability to participate in a fair process.
+            In its response, the university outlines the three possible grounds for appeal but fails to acknowledge how its own procedural failures — Including the lack of formal notice, the absence of a proper hearing, repeated rejections of communication, no charges or notice of charges, and the failure to disclose the scope of investigations and timelines — did in fact negatively impact Mr. Davlatov’s ability to participate in a fair process and is directly contradictory to the university's own internal regulations.
+.
           `,
         },
         {
@@ -675,7 +728,9 @@ This suspicious reference will become even more critical in light of the subsequ
           text: ' ', space: 1,
         },
         {
-          header: [1, 'Considering all of the above, it is evident that Mr. Davlatov was significantly mistreated, and his fundamental rights were entirely disregarded throughout the process.']
+          header: [1, 
+          'Considering all of the above, it is evident that Mr. Davlatov was significantly mistreated, and his fundamental rights were entirely disregarded throughout the totally unfair and even illegal conduct process.'
+        ]
         },
         {
           text: ' ', space: 2,
@@ -700,21 +755,9 @@ This suspicious reference will become even more critical in light of the subsequ
           ]
         },
       ],
-      
-      // uzbek: [
-      //   { header:'ass', text: "Webster Tashkent dismissed a student without due process..." },
-      //   { image: "/home/badassguy/Desktop/dismissalDoc.jpg" },
-      //   { text: "According to multiple sources, this decision..." },
-      //   { text: "The student plans to appeal..." }
-      // ],
-      // russian: [
-      //   { header:'ass', text: "Webster Tashkent dismissed a student without due process..." },
-      //   { image: "/home/badassguy/Desktop/dismissalDoc.jpg" },
-      //   { text: "According to multiple sources, this decision..." },
-      //   { text: "The student plans to appeal..." }
-      // ],
     }
   };
+  data.mainContent.uzbek = uzbek_translation;
   function createOrderedListElement(items) {
     if (!Array.isArray(items) || items.length === 0) return null;
 
@@ -726,7 +769,6 @@ This suspicious reference will become even more critical in light of the subsequ
       li.textContent = text;
       ol.appendChild(li);
     });
-
     return ol;
   }
 
@@ -737,13 +779,13 @@ This suspicious reference will become even more critical in light of the subsequ
   
     const title = document.createElement('h1');
     title.className = 'article-title';
-    title.textContent = data.title || 'Untitled';
-  
+    title.textContent = data.title[language_id-1] || 'Untitled';
     const byline = document.createElement('p');
     byline.className = 'article-byline';
-    byline.textContent = data.author ? `Documented by ${data.author}` : '';
+    const not_english = !(language_id == 1);
+    byline.textContent = data.author ? `${not_english ? '' : 'Documented by'} ${data.author}` : '';
     const dateTag = document.createElement('p');
-    dateTag.textContent = data.date ? `posted on ${data.date}` : '';
+    dateTag.textContent = data.date ? `${not_english ? '' : 'posted on'} ${data.date}` : '';
     const body = document.createElement('div');
     body.className = 'article-body';
     if (data.thumbnail) {
@@ -756,6 +798,7 @@ This suspicious reference will become even more critical in light of the subsequ
     const textContainer = document.createElement('div');
     textContainer.className = 'article-text';
     const content = data.mainContent[language];
+    const click_detail = click_instructions[language_id];
     content.forEach(item => {
       if (Array.isArray(item.header)){
         const headerSize = item.header[0] || 2;
@@ -802,7 +845,7 @@ This suspicious reference will become even more critical in light of the subsequ
         figure.appendChild(a);
 
         const caption = document.createElement('figcaption');
-        caption.textContent = "Click to enlarge";
+        caption.textContent = click_detail;
         caption.className = 'text-sm text-gray-500 mt-2';
         figure.appendChild(caption);
 
@@ -828,7 +871,7 @@ This suspicious reference will become even more critical in light of the subsequ
       figure.appendChild(a);
 
       const caption = document.createElement('figcaption');
-      caption.textContent = "Click to enlarge";
+      caption.textContent = click_detail;
       caption.className = 'text-sm text-gray-500 mt-2';
       figure.appendChild(caption);
 
@@ -861,7 +904,7 @@ This suspicious reference will become even more critical in light of the subsequ
           </div>
       `;
     if(point){point.innerHTML = structure};
-    if (index_id == 1){
+    if ((index_id == 1) || (index_id == 2)){
       tranlationNote(false);
       return renderArticle(index_id, data);
     }
@@ -931,7 +974,7 @@ This suspicious reference will become even more critical in light of the subsequ
 
         const closeIt = () => {
           panel.classList.add('slowRemove');
-          localStorage.setItem('webster-agreed', 1)
+          localStorage.setItem('reader-agreed', 1)
           closeTimeout = setTimeout(() => {
             panel.innerHTML = '';
             panel.classList.add('invisible');
@@ -1068,9 +1111,8 @@ This suspicious reference will become even more critical in light of the subsequ
     };
   const showSubmissionPanel = ()=>enablePanel(SubmissionPanel, 499, true);
   const handleAgreement = ()=>{
-    const previous_interaction = localStorage.getItem('webster-agreed');
-    if(!(previous_interaction == 1)){enablePanel(getCookie, 0, true);}
-    enablePanel(getCookie, 0, true);
+    const previous_interaction = localStorage.getItem('reader-agreed');
+    if(!(previous_interaction == 1)){enablePanel(getCookie, 0, true)};
   };
   handleAgreement();
   </script>
