@@ -208,6 +208,8 @@ Mr. Mansur Davlatov, a senior student at Webster University’s Tashkent campus,
         space:2,
         },
         {text: ' ', space:2},
+        {image: `./assets/img/me.jpg`, removeNote:true},
+        {text: ' ', space:1},
         { 
           header: [2, 'Background and Student Profile'],
           text: `
@@ -843,7 +845,6 @@ This suspicious reference will become even more critical in light of the subsequ
 
         a.appendChild(img);
         figure.appendChild(a);
-
         const caption = document.createElement('figcaption');
         caption.textContent = click_detail;
         caption.className = 'text-sm text-gray-500 mt-2';
@@ -871,7 +872,7 @@ This suspicious reference will become even more critical in light of the subsequ
       figure.appendChild(a);
 
       const caption = document.createElement('figcaption');
-      caption.textContent = click_detail;
+      caption.textContent = item.removeNote ? '' : click_detail;
       caption.className = 'text-sm text-gray-500 mt-2';
       figure.appendChild(caption);
 
