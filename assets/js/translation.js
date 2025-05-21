@@ -10,6 +10,8 @@ Ushbu ochiq ma’lumotnoma yopiq eshiklar ortida sodir bo‘lgan voqealarga, ins
     space:2,
     },
     {text: ' ', space:2},
+    {image: `./assets/img/me.jpg`, removeNote:true},
+    {text: ' ', space:1},
     { 
       header: [2, 'Talaba Profili'],
       text: `

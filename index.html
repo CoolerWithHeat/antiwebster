@@ -100,7 +100,12 @@
 </body>
 <script>
     let openedState = false;
-    let current_language = 1;
+    let current_language = 2;
+    let view_counts = {
+      1: 0,
+      2: 0,
+      3: 0,
+    };
     const subMenuOpened = (data)=>data.classList.contains('subOpen');
     const handleSubMenu = (data, open=true)=>{if (open){data.classList.add('subOpen')}else{data.classList.remove('subOpen')}};
     const openUpBar = ()=>{
@@ -136,8 +141,6 @@
       const sticks = generateSticks(closeState ? 2 : 3);
       const classname = closeState ? 'closeToggle' : 'openToggle';
       const classname_removal = closeState ? 'openToggle' : 'closeToggle';
-      console.log(classname)
-      console.log(classname_removal)
       if(point){point.classList.remove(classname_removal); point.classList.add(classname); point.innerHTML = sticks;}
     };
     function loadImageReviewers(){
@@ -159,6 +162,7 @@
 <script src="./assets/js/translation.js"></script>
 <script>
   let closeTimeout = null;
+  const domain = 'http:127.0.0.1:7777'
   const language_index = {
     1: 'english',
     2: 'uzbek',
@@ -760,6 +764,75 @@ This suspicious reference will become even more critical in light of the subsequ
     }
   };
   data.mainContent.uzbek = uzbek_translation;
+
+  function getOrCreateViewerId() {
+    let viewerId = localStorage.getItem('viewer-id');
+
+    if (!viewerId) {
+        viewerId = Math.random().toString(36).slice(2, 10);
+
+        while (viewerId.length < 8) {
+          viewerId += Math.random().toString(36).slice(2, 10);
+          viewerId = viewerId.slice(0, 8);
+        }
+
+        localStorage.setItem('viewer-id', viewerId);
+      }
+      return viewerId;
+  }
+
+  const viewer_id = getOrCreateViewerId();
+
+  function debounce(fn, delay) {
+    let timeoutId;
+
+    return function (...args) {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      timeoutId = setTimeout(() => {
+        fn.apply(this, args);
+      }, delay);
+    };
+  }
+
+
+  async function getViews(){
+    const data = {
+      'viewer_id': viewer_id,
+      'language': current_language
+    }
+    try{
+      const request = await fetch(`${domain}/getviews/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const response = await request.json();
+      const manual_indecies = {
+        'en': 1,
+        'uz': 2,
+        'ru': 3,
+      };
+      if((request.status ==  200) || (request.status ==  201)){
+      let language_views =  {};
+      Object.keys(response).forEach(each_key=>{
+        const index = manual_indecies[each_key];
+        language_views[index] = response[each_key]
+      });
+      if((1 in language_views) && (2 in language_views)){
+        view_counts = language_views;
+        setTimeout(() => {
+          viewsConstructor(view_counts);
+        }, 99);
+      }
+    };
+    }catch{}
+  };
+  const getViewsData = debounce(getViews, 499);
   function createOrderedListElement(items) {
     if (!Array.isArray(items) || items.length === 0) return null;
 
@@ -774,6 +847,21 @@ This suspicious reference will become even more critical in light of the subsequ
     return ol;
   }
 
+  function viewsConstructor(view_counts){
+    const views_path = document.getElementsByClassName('views_count')[0];
+    const view_count = view_counts[current_language] || 0;
+    if(views_path){
+      views_path.innerHTML = `
+        <div class='eye_window'>
+            <img src="./assets/img/eye.png" />
+        </div>
+        <div class='count_window'>
+          <p>${view_count}</p>
+        </div>
+      `;
+    }
+  };
+
   function renderArticle(language_id, data) {
     const language = language_index[language_id];
     const articleContainer = document.querySelector(".article");
@@ -784,6 +872,8 @@ This suspicious reference will become even more critical in light of the subsequ
     title.textContent = data.title[language_id-1] || 'Untitled';
     const byline = document.createElement('p');
     byline.className = 'article-byline';
+    const views_count = document.createElement('div');
+    views_count.className = 'views_count';
     const not_english = !(language_id == 1);
     byline.textContent = data.author ? `${not_english ? '' : 'Documented by'} ${data.author}` : '';
     const dateTag = document.createElement('p');
@@ -877,12 +967,14 @@ This suspicious reference will become even more critical in light of the subsequ
       figure.appendChild(caption);
 
       textContainer.appendChild(figure);
+      getViewsData();
     }
 }
     });
     body.appendChild(textContainer);
     articleContainer.appendChild(title);
     articleContainer.appendChild(byline);
+    articleContainer.appendChild(views_count);
     articleContainer.appendChild(dateTag);
     articleContainer.appendChild(body);
   }

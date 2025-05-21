@@ -422,6 +422,45 @@
   cursor: pointer;
 }
 
+@keyframes slowShow{
+  0%{
+    opacity: 0
+  };
+  100%{
+    opacity: 1
+  };
+}
+
 .agreeButton:hover {
   background-color: #e0e0e0;
+}
+
+.views_count{
+  width: 65px;
+  height: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.eye_window{
+  width: 30%;
+  height: 80%;
+  justify-content: center;
+  align-items: end;
+} 
+
+.eye_window img{
+  width: 105%;
+  height: 105%;
+  animation: slowShow 0.5s forwards;
+}
+
+.count_window{
+  height: 80%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slowShow 0.9s forwards;
 }
